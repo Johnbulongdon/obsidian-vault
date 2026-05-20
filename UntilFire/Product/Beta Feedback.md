@@ -24,6 +24,15 @@ The beta is currently for family and friends, not random public users.
 - Avoid star ratings during early beta.
 - Do not push Pro/paywall during beta unless John explicitly changes this.
 
+## Recent survey insights
+
+- [[UntilFire/Product/Survey - Friends Beta - 2026-05-20|Friends beta survey — 2026-05-20]] captured 10 early responses.
+- 100% of respondents had not used a FIRE calculator or planning tool before, so beta users likely need gentle beginner framing rather than FIRE-jargon-heavy flows.
+- Biggest pain points were understanding investing and increasing income, followed by tracking investments and budgeting consistently.
+- Most valuable directions were AI financial coach, investment projections, and personalized FIRE roadmap.
+- Willingness to pay exists, but price sensitivity is high: 60% maybe, 40% yes under $5/month, 0% above $5/month in this small sample.
+- Product implication: lead with “what should I do next with my current situation?” and connect freedom date to specific monthly moves around investing, income, fees, and bills.
+
 ## Active issues
 
 ### Feedback box appeared without user input
