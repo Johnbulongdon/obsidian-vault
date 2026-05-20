@@ -17,6 +17,7 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 - [[UntilFire/Product/Feedback Prompt Spec|Feedback Prompt Spec]]
 - [[UntilFire/Product/Beta Feedback|Beta Feedback]]
 - [[UntilFire/Product/Survey - Friends Beta - 2026-05-20|Friends Beta Survey — 2026-05-20]]
+- [[UntilFire/Product/Pricing and Pro Packaging|Pricing and Pro Packaging]]
 - [[UntilFire/Planning/Roadmap|Roadmap]]
 - [[UntilFire/Planning/Beta Launch Checklist|Beta Launch Checklist]]
 - [[UntilFire/Strategy/Decision Log|Decision Log]]

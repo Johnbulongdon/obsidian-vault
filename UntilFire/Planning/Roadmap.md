@@ -204,10 +204,11 @@ UntilFire shows when work can become optional — your FIRE number, your timelin
 
 ### Monetisation
 
-- [ ] Finalize free vs Pro packaging
+- [ ] Finalize free vs Pro packaging around the current $4.99/month Pro price
 - [ ] Enforce Pro unlocks only after free value is delivered
 - [ ] Email onboarding sequence: result saved, top move, dashboard reminder, Pro upgrade
 - [ ] Pricing page copy aligned with “monthly moves adviser,” not generic dashboard access
+- [ ] Keep actual Stripe price IDs in Vercel/env only, not docs or logs
 
 ---
 

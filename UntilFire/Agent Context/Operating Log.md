@@ -43,8 +43,9 @@ This note is the durable trail of how John wants UntilFire work handled. Use it 
 - Feedback must only be available after the freedom-date result.
 - Avoid star ratings during early beta.
 - Preferred feedback entry copy: “Help us improve this for you.”
+- Pro is currently $4.99/month, with the Stripe price ID set in Vercel. Keep actual price IDs out of notes/logs.
 - Avoid visible Pro/paywall pressure during beta unless John explicitly changes this.
-- See [[UntilFire/Product/Gentle Onboarding Principles]], [[UntilFire/Product/Feedback Prompt Spec]], [[UntilFire/Product/Beta Feedback]], and [[UntilFire/Planning/Beta Launch Checklist]].
+- See [[UntilFire/Product/Gentle Onboarding Principles]], [[UntilFire/Product/Feedback Prompt Spec]], [[UntilFire/Product/Beta Feedback]], [[UntilFire/Product/Pricing and Pro Packaging]], and [[UntilFire/Planning/Beta Launch Checklist]].
 
 ## Monitoring conventions
 
