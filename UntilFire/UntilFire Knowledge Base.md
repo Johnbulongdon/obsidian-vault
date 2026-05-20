@@ -19,6 +19,7 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 - [[UntilFire/Marketing/X Content Calendar|X Content Calendar]]
 - [[UntilFire/Agent Context/AI Context|AI Context]]
 - [[UntilFire/Agent Context/Agent Rules|Agent Rules]]
+- [[UntilFire/Agent Context/Operating Log|Operating Log]]
 
 ## Migrated source map
 
