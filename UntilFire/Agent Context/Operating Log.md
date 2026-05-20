@@ -32,6 +32,20 @@ This note is the durable trail of how John wants UntilFire work handled. Use it 
 - Beta priorities: mobile web UX, clear save confirmations, obvious navigation/copy, simplified dashboard IA.
 - Dashboard IA: Home / Money / Freedom, with Profile as account/settings/assumptions area. FIRE/personality test belongs near Profile assumptions.
 
+## Friends-and-family beta rules
+
+- Current beta audience is family and friends, not random users yet.
+- The beta goal is to learn whether this is what users want and what John should build next.
+- Anything that causes user dropoff is a priority signal.
+- Do not scare users at the start: keep the first experience calm, optional, and low-pressure.
+- Users should reach their freedom-date result and one useful monthly move before feedback, login, payment, bank connection, or other commitment asks.
+- Feedback should be hidden unless the user opens it.
+- Feedback must only be available after the freedom-date result.
+- Avoid star ratings during early beta.
+- Preferred feedback entry copy: “Help us improve this for you.”
+- Avoid visible Pro/paywall pressure during beta unless John explicitly changes this.
+- See [[UntilFire/Product/Gentle Onboarding Principles]], [[UntilFire/Product/Feedback Prompt Spec]], [[UntilFire/Product/Beta Feedback]], and [[UntilFire/Planning/Beta Launch Checklist]].
+
 ## Monitoring conventions
 
 - Repo update watcher: Hermes cron job `41e1229663b3` alerts when `main` changes for UntilFire or obsidian-vault.
