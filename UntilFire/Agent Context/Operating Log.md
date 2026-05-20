@@ -38,6 +38,12 @@ This note is the durable trail of how John wants UntilFire work handled. Use it 
 - Production deploy watcher should send concise alerts for successful UntilFire Production deployments.
 - Keep alerts short and actionable.
 
+## README boundary
+
+- The UntilFire repo README should stay code/setup oriented.
+- The README should include a visible pointer to `Johnbulongdon/obsidian-vault`, especially `UntilFire/UntilFire Knowledge Base.md` and this operating log, so other AI agents know where the durable project knowledge lives.
+- Avoid re-growing the README into a product roadmap, changelog, or strategy document; put that content in Obsidian instead.
+
 ## Decision trail rules
 
 When a future decision affects product direction, repo/vault boundaries, UX IA, monitoring, or agent behavior:
