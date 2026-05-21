@@ -59,9 +59,15 @@ This note is the durable trail of how John wants UntilFire work handled. Use it 
 - The README should include a visible pointer to `Johnbulongdon/obsidian-vault`, especially `UntilFire/UntilFire Knowledge Base.md` and this operating log, so other AI agents know where the durable project knowledge lives.
 - Avoid re-growing the README into a product roadmap, changelog, or strategy document; put that content in Obsidian instead.
 
+## Marketing and social content conventions
+
+- Daily X/build-in-public posts should follow the format in [[UntilFire/Marketing/X Content Calendar#Daily Build in Public Format|Daily Build in Public Format]] unless John gives a different structure.
+- Keep UntilFire social copy honest and specific: one real hook, three concrete daily details, one short reflection/goal, and one engagement question.
+- Use `#buildinpublic #FIRE` for that daily format; avoid noisy hashtag blocks.
+
 ## Decision trail rules
 
-When a future decision affects product direction, repo/vault boundaries, UX IA, monitoring, or agent behavior:
+When a future decision affects product direction, repo/vault boundaries, UX IA, monitoring, marketing/social content, or agent behavior:
 
 1. Add or update a note in this vault.
 2. Link it from [[UntilFire/UntilFire Knowledge Base]] if it is broadly useful.

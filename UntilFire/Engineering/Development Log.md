@@ -28,6 +28,14 @@ After meaningful UntilFire work:
 
 ## Recent development trail
 
+### 2026-05-21 — Marketing/social paper trail clarified
+
+- Vault-only update: keep `UntilFire/Agent Context/Operating Log.md` and `UntilFire/Marketing/X Content Calendar.md`.
+- What they are: the Operating Log tells future agents how John wants UntilFire work handled; the X Content Calendar is the reusable social/content plan for @GetUntilFire.
+- Changed: added a default daily build-in-public format and linked that rule from the Operating Log so agents writing posts use the same structure, tone, and hashtags.
+- Recommendation: commit and push these notes because they are durable marketing/agent-context decisions, not temporary drafts.
+- Verification: reviewed file diffs and scanned edited vault markdown for secret-looking values.
+
 ### 2026-05-21 — Manual category icons now sync into transactions
 
 - Commit: `0538750 fix: sync manual category icons in transactions`

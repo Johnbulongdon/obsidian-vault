@@ -7,7 +7,7 @@ migrated_at: 2026-05-20T09:16:16+00:00
 
 # UntilFire — X/Twitter Content Calendar
 Account: @GetUntilFire  
-Last updated: March 2026
+Last updated: May 2026
 
 ---
 
@@ -26,6 +26,31 @@ Last updated: March 2026
 **Posting schedule**: 1 post/day, 5 days/week (skip weekends early on — lower FIRE audience engagement)
 
 **Best times**: 8–9am and 6–7pm in your primary audience timezone. For a global FIRE audience, 9am ET / 9pm SGT covers both US and Asia.
+
+---
+
+## Daily Build in Public Format
+
+When another agent writes daily X posts for UntilFire, use this viral build-in-public structure by default unless John gives a different format for that batch.
+
+```text
+Day X/90 — Build in Public
+[One-sentence honest hook]
+• [specific thing 1] • [specific thing 2] • [specific thing 3]
+[Short reflection or next-day goal]
+[Engagement question] 👇
+#buildinpublic #FIRE
+```
+
+### How to fill it
+
+- **Day X/90:** keep the sequence accurate for the campaign.
+- **Honest hook:** one plain sentence about what happened, what was learned, or what changed. Avoid fake hype.
+- **Three specifics:** concrete product/build/marketing details from the day, separated by `•` bullets on one line.
+- **Reflection/goal:** one short line on the lesson learned or tomorrow’s focus.
+- **Question:** end with a real prompt that invites replies from FIRE-curious builders/users.
+- **Tone:** emotional/outcome-led, not “just a calculator.” Lead with freedom date, work optionality, monthly moves, and the reality of building in public.
+- **Hashtags:** use `#buildinpublic #FIRE` for this format. Do not add a large hashtag block.
 
 ---
 
