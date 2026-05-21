@@ -92,6 +92,28 @@ Last updated: April 2026
 
 ---
 
+### [2026-05] Friends beta survey validates “monthly moves adviser” over generic calculator/tracker
+**Decision**: UntilFire should continue positioning the paid product as a practical financial adviser that turns a freedom-date result into clear monthly moves, not as a generic FIRE calculator, budget tracker, or finance dashboard.
+
+**Rationale**:
+- In the 19-response friends beta survey, most respondents had never used a FIRE calculator or planning tool, so FIRE jargon and power-user workflows are weak entry points.
+- The clearest open-response demand was practical guidance: “what should I do with my current situation?”
+- The hardest reported problems were understanding investing, increasing income, and tracking investments, not only budgeting.
+- Banking apps are already the dominant tracking behavior, but respondents still lack clarity, next actions, and confidence.
+- The most valuable product directions clustered around AI financial coach, spending analysis, personalized FIRE roadmap, and investment projections.
+
+**Trade-off**: Survey willingness to pay is price-sensitive: most positive responses are under $5/month or “maybe,” with no $15+/month signal in this sample. A higher-price Pro plan may require a better-qualified audience, stronger proof, or a paid pilot before hard paywalling friends/family beta users.
+
+**Operational rule**:
+- Keep the free no-login value moment.
+- After the reveal, show one concrete monthly move and invite users to save or deepen the plan.
+- Test paid language around “personal monthly FIRE plan” and “AI financial coach,” but avoid early pressure before value.
+- Treat survey findings as directional until validated with follow-up calls or paid intent.
+
+**Source**: [[UntilFire/Product/Survey - Friends Beta - 2026-05-20]]
+
+---
+
 ## Architecture Decisions
 
 ### [2026-03] All city data in lib/fire-data.ts, not a database
