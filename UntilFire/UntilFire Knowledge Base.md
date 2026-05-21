@@ -23,6 +23,7 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 - [[UntilFire/Strategy/Decision Log|Decision Log]]
 - [[UntilFire/Strategy/Market Research|Market Research]]
 - [[UntilFire/Marketing/X Content Calendar|X Content Calendar]]
+- [[UntilFire/Engineering/Development Log|Development Log]]
 - [[UntilFire/Agent Context/AI Context|AI Context]]
 - [[UntilFire/Agent Context/Agent Rules|Agent Rules]]
 - [[UntilFire/Agent Context/Operating Log|Operating Log]]
@@ -47,6 +48,7 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 ### UntilFire/Engineering
 - [[UntilFire/Engineering/Auth Setup|Auth Setup]] ← `AUTH_SETUP.md`
 - [[UntilFire/Engineering/Changelog|Changelog]] ← `CHANGELOG.md`
+- [[UntilFire/Engineering/Development Log|Development Log]] — current paper trail of recent updates, state, and next actions
 
 ### UntilFire/Marketing
 - [[UntilFire/Marketing/Launch Posts|Launch Posts]] ← `docs/LAUNCH_POSTS.md`
