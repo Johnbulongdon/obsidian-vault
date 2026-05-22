@@ -46,9 +46,10 @@ The "Your Highest-Impact Move" card in the dashboard shows the top acceleration 
 
 **Free — no login required**
 
-- **City-adjusted FIRE number** — cost-of-living normalization across 263 cities worldwide
-- **Tax-accurate projection** — US federal/state/FICA + international effective rates; after-tax take-home as the savings basis
+- **Freedom-date result** — the first tangible answer: when work can become optional
+- **Guided next move** — one concrete action that shows how to bring the date closer
 - **Interactive decision grid** — adjust dining-cut % and extra savings with sliders; FIRE date impact updates live
+- **City/tax trust layer** — cost-of-living normalization and tax assumptions support credibility, but they are not the main promise
 - **Quantified recommendations** — "Raise your savings rate from 12% to 20% → 2.3 years sooner" instead of generic advice
 - **Wizard → dashboard handoff** — calculator prefill flows into dashboard on first login
 
@@ -183,7 +184,7 @@ npm run lint         # eslint .
 
 | Tier | Price | What you get |
 |---|---|---|
-| **Free** | $0 | 60-second FIRE answer, interactive decision impact grid, city/tax-adjusted — no login |
+| **Free** | $0 | 60-second freedom-date answer, first next move, interactive decision impact grid, city/tax trust details — no login |
 | **Pro** | $9/mo | Full dashboard: acceleration card, expense tracking, Monte Carlo, monthly action plans |
 
 ---

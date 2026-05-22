@@ -26,9 +26,10 @@ This note is the durable trail of how John wants UntilFire work handled. Use it 
 
 ## UntilFire product direction
 
-- Position UntilFire around emotional outcomes: work becoming optional, freedom date, and monthly moves.
-- Do not lead social/community copy with “calculator” framing, except SEO pages where calculator wording matches search intent.
-- Anchor copy: “Find your freedom date”, “work can become optional”, “monthly moves”, “Free, no login.”
+- Position UntilFire around emotional outcomes: work becoming optional, freedom date, and guided monthly moves.
+- Core differentiator: UntilFire does it with you — it gives a path, next move, and continuity instead of only a number/date.
+- Do not lead social/community copy with “calculator” framing, city-specific cost of living, or city taxes, except SEO/methodology pages where those match search intent or build trust.
+- Anchor copy: “Personal finance that sets you free”, “Find your freedom date”, “work can become optional”, “guided plan/monthly moves”, “Free, no login.”
 - Beta priorities: mobile web UX, clear save confirmations, obvious navigation/copy, simplified dashboard IA.
 - Dashboard IA: Home / Money / Freedom, with Profile as account/settings/assumptions area. FIRE/personality test belongs near Profile assumptions.
 

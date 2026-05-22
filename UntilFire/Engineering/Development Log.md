@@ -28,6 +28,14 @@ After meaningful UntilFire work:
 
 ## Recent development trail
 
+### 2026-05-22 — Landing positioning shifted from city/tax to guided plan
+
+- Repo update: pulled latest `origin/main`, then cleaned the new landing page copy so the hero, how-it-works steps, comparison callout, feature cards, pricing bullets, and repo context docs emphasize UntilFire as a guided plan.
+- Product reason: supports activation/conversion by making the core promise emotional and outcome-led — UntilFire does it with you — while leaving city/tax accuracy as a supporting trust feature.
+- Verification: `npm run lint` and `npm run build` passed with existing warnings only after the plan hero update.
+- Punchline update: added John's freedom-led punchlines to the decision layer and changed the hero to “Personal finance that sets you free.”
+- Next useful action: mobile QA the public homepage to make sure the new “plan, not calculator” story scans well above the fold.
+
 ### 2026-05-21 — Marketing/social paper trail clarified
 
 - Vault-only update: keep `UntilFire/Agent Context/Operating Log.md` and `UntilFire/Marketing/X Content Calendar.md`.
