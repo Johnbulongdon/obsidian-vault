@@ -28,6 +28,15 @@ After meaningful UntilFire work:
 
 ## Recent development trail
 
+### 2026-05-26 — Emergency fund now excludes brokerage DCA cash; Google login uses canonical UntilFire URL
+
+- Repo update: dashboard emergency-fund logic now keeps brokerage cash in total cash/assets but excludes it from the emergency-fund "Current Savings" number when that cash is sitting in a brokerage account for scheduled investing.
+- Product reason: this avoids double-assigning DCA cash as both emergency reserve and investable cash, while still showing it honestly in total assets.
+- Auth update: Google sign-in now uses the canonical UntilFire production callback from `lib/site.ts` for live traffic, while localhost still uses the local origin for development.
+- Setup note: Supabase **Site URL** should be the real UntilFire domain so Google shows UntilFire instead of the raw Supabase project URL on the consent screen.
+- Verification target: `npm run build` before push.
+- Related notes: [[UntilFire/Engineering/Auth Setup]], [[UntilFire/Engineering/Changelog]].
+
 ### 2026-05-22 — Landing positioning shifted from city/tax to guided plan
 
 - Repo update: pulled latest `origin/main`, then cleaned the new landing page copy so the hero, how-it-works steps, comparison callout, feature cards, pricing bullets, and repo context docs emphasize UntilFire as a guided plan.
