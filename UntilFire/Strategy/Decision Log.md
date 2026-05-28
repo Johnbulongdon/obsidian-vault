@@ -125,6 +125,26 @@ Last updated: April 2026
 
 ---
 
+### [2026-05] Broader startup/company description should lead with personal finance and freedom
+**Decision**: When describing UntilFire in startup/product contexts, lead with the broader personal-finance-to-freedom framing, not only the calculator starting point.
+
+**Preferred description**:
+- “UntilFire is a personal finance product that helps people move toward financial freedom by showing where they stand, what actions matter most, and how to make work optional over time.”
+- “It is interesting because instead of just tracking money or giving a one-time answer, it gives users a clear path that turns financial progress into something practical, motivating, and easier to act on.”
+
+**Rationale**:
+- Calculator-first copy overemphasizes the entry moment and understates the real product promise.
+- The stronger positioning is broader: personal finance that sets you free.
+- The company description should make clear that UntilFire is about guided progress toward freedom, not only a tool for getting a number.
+
+**Operational rule**:
+- In startup/product descriptions, lead with personal finance, freedom, and guided progress.
+- Mention calculator/freedom-date flow as part of the product experience, not the whole company story.
+
+**Source**: John wording refinement on 2026-05-28
+
+---
+
 ## Architecture Decisions
 
 ### [2026-03] All city data in lib/fire-data.ts, not a database

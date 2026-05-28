@@ -30,6 +30,7 @@ This note is the durable trail of how John wants UntilFire work handled. Use it 
 - Core differentiator: UntilFire does it with you — it gives a path, next move, and continuity instead of only a number/date.
 - Do not lead social/community copy with “calculator” framing, city-specific cost of living, or city taxes, except SEO/methodology pages where those match search intent or build trust.
 - Anchor copy: “Personal finance that sets you free”, “Find your freedom date”, “work can become optional”, “guided plan/monthly moves”, “Free, no login.”
+- Short startup/company description to reuse when tools ask “what does your company do”: “UntilFire is a personal finance product that helps people move toward financial freedom by showing where they stand, what actions matter most, and how to make work optional over time. It is interesting because instead of just tracking money or giving a one-time answer, it gives users a clear path that turns financial progress into something practical, motivating, and easier to act on.”
 - Beta priorities: mobile web UX, clear save confirmations, obvious navigation/copy, simplified dashboard IA.
 - Dashboard IA: Home / Money / Freedom, with Profile as account/settings/assumptions area. FIRE/personality test belongs near Profile assumptions.
 

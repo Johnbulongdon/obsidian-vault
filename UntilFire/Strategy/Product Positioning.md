@@ -12,6 +12,12 @@ source: synthesized from beta survey, market research, personas, and decision lo
 
 UntilFire is personal finance that sets you free: a calm financial freedom app that shows your freedom date, then helps you move it closer with a clear plan.
 
+## Short startup description
+
+UntilFire is a personal finance product that helps people move toward financial freedom by showing where they stand, what actions matter most, and how to make work optional over time.
+
+It is interesting because instead of just tracking money or giving a one-time answer, it gives users a clear path that turns financial progress into something practical, motivating, and easier to act on.
+
 ## Core positioning statement
 
 UntilFire is for people who want more freedom from work and money stress, but do not want to become spreadsheet experts or amateur financial planners just to get there.
