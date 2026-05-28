@@ -3,183 +3,300 @@ project: UntilFire
 source_path: docs/PRD.md
 migrated_from_repo: /home/adminuser/projects/UntilFire
 migrated_at: 2026-05-20T09:16:16+00:00
+updated_at: 2026-05-28
+role: product-requirements
 ---
 
 # UntilFire — Product Requirements Document (PRD)
-Last updated: March 2026
+Last updated: 2026-05-28
 
 ---
 
-## Problem Statement
+## Purpose of this note
 
-Most people have no idea when they can retire or what "financial independence" actually means for them personally. The tools that exist are either:
-- Too complex (ProjectionLab, Boldin) — overwhelming for beginners
-- Too simple and generic (online calculators) — use national averages, ignore taxes, ignore real cost of living
-- Too expensive ($99–$144/yr) — creating friction before users see any value
+This note owns **product requirements and feature behavior**.
 
-**The core insight**: your FIRE number is not universal. A person retiring in Austin, TX needs a completely different number than someone in San Francisco, London, or Bangkok. No free tool shows you this clearly.
+It should describe what the product needs to do, how the main flows should behave, and what must be true for a good user experience.
 
----
+It should not be the main home for product positioning, launch sequencing, or agent operating rules.
 
-## Product Vision
-
-> "The fastest way for anyone in the world to understand their FIRE number — personalised to their city, their income, and their taxes — with zero friction."
-
-UntilFire is the **entry point** to FIRE planning: simple enough that someone can get their number in 60 seconds, credible enough that they trust it, and compelling enough that they want to go deeper.
+For those, use:
+- [[UntilFire/Strategy/Product Positioning|Product Positioning]]
+- [[UntilFire/Planning/Roadmap|Roadmap]]
+- [[UntilFire/Agent Context/Operating Log|Operating Log]]
 
 ---
 
-## Target User
+## Product summary
 
-See [PERSONAS.md](./PERSONAS.md) for full profiles. In brief:
+UntilFire is a **financial freedom app** that helps users:
 
-- **Primary**: 25–38 year old knowledge workers (tech, finance, healthcare) who earn $70k–$200k, have heard of FIRE, and want to know if it's achievable for them
-- **Secondary**: International users — particularly China, India, Southeast Asia, Middle East — who have no FIRE tools built for their cost of living
-- **Tertiary**: Digital nomads evaluating geo-arbitrage scenarios
+1. see their freedom date quickly
+2. understand where they stand
+3. get a clear next move that can bring that date closer
 
----
-
-## Core Features (Current — v1)
-
-### 1. FIRE Calculator Wizard
-**5-screen flow: Hero → City → Income → Savings → Reveal**
-
-#### Screen 0: Hero / Landing
-- Headline: "Your spending is costing you years of freedom"
-- Single CTA: "Calculate my FIRE number"
-- Social proof: user count, market stats
-- No login required, no email required
-
-#### Screen 1: City Selection
-- Search-as-you-type input filtering 263 cities worldwide
-- Dropdown shows city name, estimated annual expenses, FIRE target
-- Custom city fallback: if city not found, user can enter monthly expenses manually
-- After selection: shows annual expenses, FIRE target (25×), vs. US average comparison card
-
-#### Screen 2: Income Input
-- Annual gross income — number input + slider (20k–500k, accepts higher via typing)
-- Real-time tax calculation:
-  - US cities: 2025 federal brackets + FICA + state tax
-  - International: flat effective rate by country
-- Displays: gross income, after-tax take-home, monthly take-home, real hourly rate, tax breakdown card
-
-#### Screen 3: Savings Input
-- Monthly savings — number input + slider (0–$10k)
-- Real-time savings rate calculation and benchmark label (Very low / Average / Good / FIRE pace)
-- Progress bar benchmarked against 0%, 20%, 50% savings rates
-
-#### Screen 4: FIRE Number Reveal
-- Phase 1 (Calculating): 4 calculation steps light up sequentially (620ms each), progress bar fills to 100%, 800ms pause
-- Phase 2 (Reveal): number slams in with spring animation, count-up over 2.2s, orange glow effect
-- Shows: FIRE target ($), retirement year, retirement age, city name
-- "Your spending is costing you X years" statement
-- 4 delta cards: cut dining, save $500/mo more, 10% pay cut, invest bonus
-- CTA: "Make this more accurate — it's free" → dashboard signup
-
-### 2. Dashboard (Logged-in)
-- Supabase auth (Google OAuth)
-- Projection chart (Recharts)
-- Expense tracking / log
-- FIRE plan display
-
-### 3. Waitlist
-- Email capture for AI roadmap feature
-- POST /api/waitlist → stored in Supabase
+The product should feel calm, trustworthy, beginner-friendly, and actionable.
 
 ---
 
-## Feature Requirements by Priority
+## Problem statement
 
-### P0 — Must work perfectly (live now)
-- [ ] City search returns correct results for all 263 cities
-- [ ] Custom city fallback correctly sets `state.col = monthly × 12`
-- [ ] FIRE number calculation is mathematically correct (25× rule, 7% return, compound growth)
-- [ ] Tax calculation is accurate for US cities (federal + FICA + state)
-- [ ] FIRE reveal animation plays on every visit to screen 4
-- [ ] "Continue" button disabled until city/income/savings selected
-- [ ] Auth redirect: logged-in users skip wizard and go to dashboard
+Most users do not need another finance app that only tracks spending or another calculator that only returns a number.
 
-### P1 — High priority (next sprint)
-- [ ] Stripe integration — $9/mo Pro tier
-- [ ] Email onboarding sequence for new signups (Resend)
-- [ ] Share my FIRE number — native share / clipboard copy card
-- [ ] Google Search Console + analytics setup
+They need help answering:
 
-### P2 — Medium priority (next quarter)
-- [ ] AI roadmap feature (personalized monthly FIRE plan)
-- [ ] City-specific SEO landing pages (`/fire-number/austin-tx`, `/fire-number/london`)
-- [ ] Mobile-optimized experience audit
-- [ ] Scenario simulator (cut expenses / boost income sliders on reveal screen)
+- where do I stand?
+- when could work become optional?
+- what should I do next?
+- should I focus on spending, income, or investing first?
 
-### P3 — Future
-- [ ] Mobile app (React Native or PWA)
-- [ ] Social comparison ("your FIRE number vs. others in Austin")
-- [ ] Existing savings input (current portfolio balance)
-- [ ] Monte Carlo simulation
-- [ ] Partner/spouse mode
+The current market often fails in two directions:
+
+- **Too complex** — dense simulators and planners require too much setup before value.
+- **Too shallow** — dashboards and generic calculators do not tell the user what to do next.
+
+UntilFire should bridge that gap.
 
 ---
 
-## Non-Goals (deliberately out of scope for v1)
-- Investment account aggregation (Plaid) — adds regulatory complexity
-- Tax-loss harvesting advice
-- Social Security optimization
-- Estate planning
-- Advisor marketplace
+## Product vision
+
+> Give users a fast freedom-date answer, then help them move that date closer with a simple, practical plan.
+
+The first value moment should be free, fast, and no-login.
+The product should then create continuity into the dashboard and adviser layer.
 
 ---
 
-## Success Metrics
+## Target user
 
-| Metric | Target (6 months) |
-|---|---|
-| Monthly active users | 10,000 |
-| Calculator completion rate | >60% (hero → reveal) |
-| Waitlist signups | 2,000 |
-| Paid conversions (at launch) | 200 users |
-| MRR | $1,800 |
+See [[UntilFire/Product/Personas|Personas]] for full detail.
 
----
+At a high level, the product is for financially aware but under-guided users who want clarity without complexity.
 
-## FIRE Calculation Methodology
-
-```
-FIRE Target = Annual Expenses × 25   (the "25× rule" / 4% safe withdrawal rate)
-
-Annual Expenses = city.col (our estimated annual living cost for that city in USD)
-                OR user-entered monthly expenses × 12 (custom city)
-
-Years to FIRE:
-  Starting balance = $27,400 (assumed existing savings)
-  Each year: balance = balance × 1.07 + (monthly savings × 12)
-  Loop until balance ≥ FIRE Target or 65 years
-
-Tax (US cities):
-  Federal: 2025 brackets with $15,000 standard deduction
-  FICA: 6.2% SS (up to $176,100) + 1.45% Medicare + 0.9% Additional Medicare (>$200k)
-  State: flat effective rate by state
-
-Tax (international):
-  Single flat effective rate by country
-  No FICA equivalent applied
-```
+Important early user clusters:
+- investment-confidence seekers
+- income climbers
+- global / cross-border planners
+- early-career stabilizers
+- FIRE-curious planners
 
 ---
 
-## Design System
+## Core product principles
 
-| Token | Value |
-|---|---|
-| Background | `#08080e` |
-| Card | `#13131e` |
-| Elevated | `#1a1a28` |
-| Border | `#1c1c2e` |
-| Text | `#e8e8f2` |
-| Text muted | `#6e6e8e` |
-| Accent (orange) | `#f97316` |
-| Teal | `#22d3a5` |
-| Danger | `#ef4444` |
-| Purple | `#a78bfa` |
-| Font display | Syne (700, 800) |
-| Font body | DM Sans (300, 400, 500) |
-| Font mono | DM Mono (400, 500) |
+- Lead with freedom from financial stress and work, not with calculator jargon.
+- Deliver value before asking for login, payment, feedback, or bank connection.
+- Make the result screen answer both **“where do I stand?”** and **“what should I do next?”**.
+- Use city/tax/global logic as trust proof, not the main promise.
+- Keep the experience simple on the surface even when the underlying logic is deeper.
+
+---
+
+## Core product flows
+
+### 1. Anonymous calculator journey
+
+This is the main acquisition and first-value flow.
+
+#### Goal
+A new visitor should be able to go from curiosity to a useful result in about 60 seconds.
+
+#### Core steps
+- Hero / landing
+- City or custom expenses
+- Income
+- Savings
+- Reveal / freedom-date result
+
+#### Required output
+The result should show:
+- freedom date or timeline
+- enough context to trust the answer
+- at least one practical next move
+- a low-pressure path to continue
+
+### 2. Logged-in continuity journey
+
+This is the retention and deepening layer.
+
+#### Goal
+Help the user keep track of progress, understand changes, and eventually use a stronger monthly adviser loop.
+
+#### Core areas
+- dashboard / home
+- money / transactions / reports
+- freedom / projections / scenario views
+- account and assumptions
+
+### 3. Pro / paid layer
+
+This should deepen guidance, not interrupt first value.
+
+#### Goal
+Offer a better ongoing plan after trust has been earned.
+
+#### Desired shape
+- clearer monthly moves
+- more continuity
+- stronger personalized guidance
+- better visibility into impact over time
+
+---
+
+## Feature requirements by product area
+
+## A. Public landing and calculator
+
+### Hero / landing
+Must:
+- make the product understandable quickly
+- make the main CTA obvious
+- avoid forcing login before value
+- feel broader than a niche FIRE hobbyist tool
+
+Should:
+- communicate freedom date + path
+- feel calm and trustworthy on mobile
+
+### City / custom expenses step
+Must:
+- support search-as-you-type city selection
+- support custom-city fallback
+- let users continue without getting blocked by missing city data
+
+Should:
+- make assumptions understandable enough to trust
+
+### Income step
+Must:
+- support direct annual income entry
+- show tax-aware context
+- work for both US and international assumptions
+
+Should:
+- explain take-home impact clearly without overwhelming users
+
+### Savings step
+Must:
+- accept a simple savings input
+- help users estimate if they do not know an exact number
+
+Should:
+- create useful motivation without shaming the user
+
+### Reveal / result screen
+Must:
+- show the freedom date or equivalent timeline clearly
+- explain the result enough to feel believable
+- show at least one concrete next move
+- provide a low-pressure continuation path
+
+Should:
+- make the moment feel emotionally meaningful
+- encourage adjustment and exploration
+- connect actions to time impact where possible
+
+---
+
+## B. Logged-in dashboard
+
+Must:
+- preserve continuity from the calculator result
+- make it easy to understand where the user stands
+- avoid overwhelming first-time users
+
+Should:
+- separate present money state from freedom-path state clearly
+- support cashflow, tracking, reports, and projections
+- show changes over time in a way that feels useful, not noisy
+
+---
+
+## C. Guidance / adviser layer
+
+Must:
+- focus on practical next moves
+- explain why a recommendation matters
+- connect guidance to freedom-date impact when possible
+
+Should:
+- help users choose between spending, income, and investing actions
+- feel personalized without feeling magical or invasive
+
+Future ideal:
+- monthly adviser loop
+- clear top move / next move surface
+- confidence and tradeoff framing
+
+---
+
+## D. Payments / Pro
+
+Must:
+- stay out of the first-value path
+- work cleanly once the user chooses to upgrade
+
+Should:
+- frame paid value around guidance and continuity, not access friction
+
+---
+
+## E. Bank connection / external data
+
+Must:
+- remain secondary until trust is earned
+- not be required for the first useful experience
+
+Should:
+- only become more prominent if it clearly improves guidance quality
+
+---
+
+## Current priorities
+
+The most important near-term requirements are:
+
+1. smooth mobile no-login flow
+2. clear result with one monthly move or equivalent next action
+3. low-pressure first session
+4. stronger trust in the result
+5. verified Stripe / Plaid / categorisation infrastructure before wider launch
+
+Use [[UntilFire/Planning/Roadmap|Roadmap]] for sequencing and launch readiness.
+
+---
+
+## Non-goals right now
+
+- becoming a generic budgeting app
+- making bank connection central to first value
+- pushing a hard paywall before the guidance loop is strong
+- building power-user depth before beginner clarity
+- expanding into regulated-advice territory
+
+---
+
+## Success metrics
+
+Product success should be judged by whether users can:
+
+- understand the product quickly
+- complete the calculator flow
+- trust the result
+- see a clear next move
+- continue into saving, sharing, logging in, or coming back
+
+See [[UntilFire/Planning/Roadmap|Roadmap]] for current metric targets and launch gates.
+
+---
+
+## Related notes
+
+- [[UntilFire/Strategy/Product Positioning|Product Positioning]]
+- [[UntilFire/Product/User Journey|User Journey]]
+- [[UntilFire/Product/Personas|Personas]]
+- [[UntilFire/Product/Survey - Friends Beta - 2026-05-20|Friends Beta Survey — 2026-05-20]]
+- [[UntilFire/Planning/Roadmap|Roadmap]]
+- [[UntilFire/Product/Gentle Onboarding Principles|Gentle Onboarding Principles]]
+- [[UntilFire/Product/Feedback Prompt Spec|Feedback Prompt Spec]]

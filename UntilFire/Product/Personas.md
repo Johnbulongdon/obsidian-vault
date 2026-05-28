@@ -6,13 +6,30 @@ migrated_at: 2026-05-20T09:16:16+00:00
 ---
 
 # UntilFire — User & Buyer Personas
-Last updated: March 2026
+Last updated: 2026-05-28
 
 ---
 
 ## Overview
 
 UntilFire has three primary personas and two secondary personas. The product must nail the primary personas before optimising for secondary ones.
+
+The May 2026 friends beta survey adds an important correction: the real early audience is more beginner-heavy, more international, and more income/investing-anxiety driven than a classic FIRE-planner audience. These personas still work, but they should be read as a portfolio anchored around five observed user clusters:
+
+- **Investment-confidence seekers** — want help understanding how to invest and what to do next.
+- **Income climbers** — focused on increasing income or building side income before deep planning.
+- **Global / cross-border planners** — dealing with different currencies, tax regimes, and fragmented accounts.
+- **Early-career stabilizers** — younger or lower-income users who need structure, discipline, and simple defaults.
+- **FIRE-curious planners** — motivated by freedom, but usually not ready for a complex simulator.
+
+Survey signals behind that portfolio:
+
+- 72% were age 25–34
+- 80% had never tried a FIRE calculator or planning tool
+- 72% use banking apps already, but still lack clarity and next-step guidance
+- Top pain points were understanding investing (64%), increasing income (52%), staying disciplined (40%), and tracking investments (36%)
+
+Implication: the persona set should optimize first for trust, simplicity, and practical guidance — not for expert-mode modeling.
 
 | Persona | Name | Age | Income | Key motivation |
 |---|---|---|---|---|
@@ -57,7 +74,7 @@ Alex heard about FIRE on a podcast and Googled it. Has a vague sense that retiri
 - A result in under 60 seconds without signing up
 - Their actual FIRE number, not a range
 - Some context on what that means ("you could retire in 2043 — age 45")
-- A reason to come back and track progress
+- A clear first next step and a reason to come back and track progress
 
 ### Behaviour in the product
 - Comes via referral link, starts wizard immediately
@@ -156,6 +173,7 @@ Wei is a high earner in Asia who understands FIRE conceptually but has never fou
 - Accurate international tax estimates (even flat effective rates are better than nothing)
 - Custom city fallback if their specific city isn't listed
 - Multi-city comparison: "What if I retire in Chiang Mai vs. Shanghai?"
+- Guidance that acknowledges exchange-rate, cross-border account, and tax complexity without overwhelming them
 
 ### Behaviour in the product
 - Immediately searches for their home city — relieved to find it

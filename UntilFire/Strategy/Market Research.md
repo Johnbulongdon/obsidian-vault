@@ -6,7 +6,7 @@ migrated_at: 2026-05-20T09:16:16+00:00
 ---
 
 # UntilFire — Market Research & Competitive Analysis
-Last updated: March 2026
+Last updated: 2026-05-28
 
 ---
 
@@ -23,6 +23,37 @@ Last updated: March 2026
 | ProjectionLab users (proxy for addressable FIRE market) | 100,000 households | ProjectionLab blog |
 
 **Key insight**: The FIRE community is large, vocal, and actively looking for tools. ProjectionLab reached $1M ARR with 100,000 users — showing the market will pay for good FIRE software. UntilFire's opportunity is capturing the much larger **pre-FIRE** audience (people just discovering FIRE) that existing tools are too complex to serve.
+
+---
+
+## Fresh demand signal from friends beta survey (25 responses, May 2026)
+
+The latest UntilFire survey readout gives a more grounded view of the actual early audience than generic TAM numbers alone.
+
+### What the survey changes
+
+- The real entry audience is **younger and earlier-stage** than classic FIRE software buyers: 72% were age 25–34, 24% were students, and 80% had never tried a FIRE calculator.
+- The strongest immediate user job is not “optimize my retirement model.” It is **“tell me what to do next with my current financial situation.”**
+- Respondents already think about financial independence often: 76% said weekly or daily.
+- Current goals skew toward **increase income, build side income, stability, and investing better**, not only early retirement.
+- Banking apps are the default tracking layer for 72% of respondents, so a generic tracker is not a strong wedge by itself.
+- The highest-friction pain points are **understanding investing (64%)**, **increasing income (52%)**, **staying disciplined (40%)**, and **tracking investments (36%)**.
+- The sample is already meaningfully international: after normalizing freeform regions, the survey included users across the United States, China, Hong Kong, Taiwan, Canada, the UK, Australia, EMEA, and Ireland.
+
+### Market implication
+
+UntilFire is better framed as a **personal finance adviser that leads with freedom and gives a path**, not as a niche simulator for existing FIRE enthusiasts. The broad market opportunity is the user who is financially aware, price-sensitive, often globally mobile or cross-border, and wants a simple trustworthy plan more than a detailed model.
+
+### Pricing implication
+
+The survey still points to price sensitivity, but it is not purely a “free-only” audience:
+
+- 36% said yes under $5/month
+- 32% said maybe
+- 16% said yes at $5–15/month
+- 4% said yes at $15+/month
+
+This supports a soft paid path after value, with stronger evidence for an entry paid tier than for a high-ticket plan in the current audience.
 
 ---
 
@@ -158,7 +189,7 @@ That's the gap UntilFire is building into. The market has calculators and modell
 - **Boldin**: Comprehensive but built for 50+ pre-retirees. Overwhelming for accumulation-phase users.
 - **Human financial advisers**: $2,800–$5,000+ per engagement. Not accessible for the FIRE community.
 
-UntilFire's bet is that the 25–40 age group pursuing FIRE doesn't need a wealth manager — they need a knowledgeable friend who knows their numbers and checks in monthly.
+UntilFire's bet is that the 25–40 age group pursuing FIRE doesn't need a wealth manager — they need a knowledgeable friend who knows their numbers and checks in monthly. The May 2026 survey supports this: users asked for simple UX, clear next steps, investing confidence, and practical financial guidance more often than deeper modeling controls.
 
 ### Differentiation by Dimension
 

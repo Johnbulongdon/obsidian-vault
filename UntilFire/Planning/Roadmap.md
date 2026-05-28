@@ -3,10 +3,11 @@ project: UntilFire
 source_path: docs/ROADMAP.md
 migrated_from_repo: /home/adminuser/projects/UntilFire
 migrated_at: 2026-05-20T09:16:16+00:00
+updated_at: 2026-05-28
 ---
 
 # UntilFire — Product Roadmap
-Last updated: May 2026
+Last updated: 2026-05-28
 
 ---
 
@@ -14,283 +15,280 @@ Last updated: May 2026
 
 **Positioning:** Personal finance that sets you free.
 
-UntilFire starts with your freedom date, then walks with you toward it: what matters, what to do this month, and how each move brings work optionality closer. Free, no login.
+UntilFire should be framed as a **financial freedom app**: start with your freedom date, reduce financial stress, and give a clear path that helps work become optional over time.
 
-**Core differentiator:** UntilFire does it with you. Most finance tools are like a language app that only tells you what “good English” looks like; UntilFire should be the Duolingo-style path that gives you the next lesson, progress, and motivation toward financial freedom.
+**Core differentiator:** UntilFire does it with you. Most money tools either track what already happened or give you a number and leave you alone. UntilFire should show the path, the next move, and the impact of that move.
 
-**North star:** Turn financial independence from an abstract calculator result into a clear, emotional, actionable path: *when can work become optional, what should I do next, and how will UntilFire help me keep moving?*
+**North star:** Turn financial independence from an abstract result into a clear, emotional, actionable path:
+
+- where do I stand?
+- when can work become optional?
+- what should I do next?
+- how does this move my freedom date?
 
 **Product principles:**
-- Lead with the emotional outcome: freedom date, work optional, escape the grind.
-- Make the main promise the guided path, not city-specific cost-of-living or tax math.
-- Use city/tax assumptions as supporting trust proof only: “credible enough to believe,” not the headline differentiator.
-- Keep the first value moment free, fast, and no-login.
-- Show specific monthly moves, not generic FIRE advice.
-- Make calculations feel trustworthy with transparent assumptions, privacy reassurance, and clear methodology.
-- Treat the dashboard and Pro tier as continuity after the first aha moment, not a replacement for the free calculator.
-- Do not hide the aha moment behind login, payment, or heavy setup.
+- Lead with freedom from financial stress and work, not with calculator jargon.
+- Keep the first value moment free, fast, calm, and no-login.
+- Show a concrete next move after the result, not generic FIRE advice.
+- Use city/tax logic and global coverage as trust proof, not the main headline.
+- Keep global / cross-border strength as support for now, not the lead story.
+- Protect the first session from pressure: no early login, paywall, bank prompt, or feedback interruption.
+- Treat the dashboard and Pro tier as continuity after the first aha moment, not the product’s only value.
 
 ---
 
-## Phase 0 — Foundation ✅ Complete
+## Current Reality Snapshot
 
-*Goal: Working product live at untilfire.com*
+### Built and already real
 
-- [x] Next.js 15 app deployed on Vercel
-- [x] Supabase auth with Google OAuth
-- [x] FIRE calculator foundation
-- [x] Dashboard foundation
-- [x] Projection chart with Recharts
-- [x] Waitlist API (`/api/waitlist`)
-- [x] SEO basics (`robots.ts`, `sitemap.ts`)
-- [x] Domain: untilfire.com live
+**Public funnel / calculator**
+- 5-screen landing calculator wizard
+- 263 cities worldwide with search-as-you-type city selection
+- Custom city fallback with manual monthly expenses
+- US tax calculations and international effective tax assumptions
+- FIRE number / freedom-date reveal
+- Existing portfolio balance input
+- Wizard → dashboard prefill handoff
+- Public calculator hub at `/calculators`
+- City SEO pages under `/fire-number/*`
+- FIRE Type quiz and share page infrastructure
 
----
+**Dashboard / logged-in product**
+- Dashboard shell and tabs
+- Cashflow tracking
+- Assets / liabilities
+- Projection chart
+- Monte Carlo simulation
+- Recurring planner
+- Reports
+- Profile settings
+- Multi-currency display
 
-## Phase 1 — Calculator, Dashboard, and SEO Base ✅ Complete
+**Growth / content**
+- Learning Hub
+- Public learn pages
+- article pages
+- basic SEO plumbing
 
-*Goal: Give users a personalized FIRE answer and a dashboard that can continue the journey.*
+### Built but still needs production verification
 
-### Calculator / Public Funnel
+**Stripe / Pro**
+- checkout route
+- portal route
+- webhook route
+- subscription sync route
+- upgrade modal and subscription schema
 
-- [x] 5-screen landing calculator wizard
-- [x] 263 cities worldwide with cost-of-living data
-- [x] Search-as-you-type city dropdown
-- [x] Custom city fallback with manual monthly expenses
-- [x] US federal/state/FICA tax calculation
-- [x] International effective tax assumptions
-- [x] FIRE number reveal
-- [x] Existing portfolio balance input
-- [x] Wizard → dashboard prefill handoff
-- [x] Public calculator hub at `/calculators`
-- [x] SEO calculators: Coast FIRE, APY, compound interest, savings rate, 4% rule
-- [x] First city SEO landing pages under `/fire-number/*`
+**Plaid / bank connection**
+- link token, exchange, sync, disconnect, list items, accounts routes
+- dashboard UI
+- free vs Pro bank-limit logic
+- balances and transactions feeding product views
 
-### Dashboard
+**AI categorisation**
+- server-side categorisation route
+- env var moved server-side
+- basic product wiring in place
 
-- [x] Dashboard shell with sidebar navigation
-- [x] Overview, Cashflow, Assets, Liabilities, FIRE Calculator, Reports, Learning Hub, Profile
-- [x] FIRE projection chart and target progress
-- [x] Monte Carlo simulation in dashboard
-- [x] Cashflow transaction tracker
-- [x] Custom categories and sub-categories using localStorage
-- [x] Recurring planner with include/exclude toggles and detection from transaction history
-- [x] Reports: income vs expenses, category breakdown, month-by-month table
-- [x] Multi-currency dashboard display with fallback FX rates
-- [x] Profile settings: name, city, default currency, delete account
-
-### Content / SEO
-
-- [x] Stage-based Learning Hub
-- [x] Public stage pages under `/learn/stages/[stage]`
-- [x] Article grid and individual article pages
-- [x] Topics index
-- [x] Internal links from landing/nav to calculators and learn pages
-
----
-
-## Phase 2 — Built Recently, Needs Production Verification 🧪
-
-*Goal: Do not rebuild what exists. Verify, harden, and decide whether each feature belongs in the Product Hunt path.*
-
-### Monetisation / Pro
-
-- [x] Stripe checkout route: `/api/stripe/checkout`
-- [x] Stripe portal route: `/api/stripe/portal`
-- [x] Stripe webhook route: `/api/stripe/webhook`
-- [x] Stripe subscription sync route: `/api/stripe/sync-subscription`
-- [x] Dashboard upgrade modal connected to checkout
-- [x] Subscription table/schema present
-- [ ] Verify production Stripe env vars and webhook signing secret on Vercel
-- [ ] Test full checkout → dashboard return → subscription sync → portal flow
-- [ ] Decide exact launch paywall: what stays free, what Pro unlocks, and how aggressively to show upgrade prompts
-
-### Bank Connection / Plaid
-
-- [x] Plaid server routes: create link token, exchange token, sync, disconnect, list items, accounts
-- [x] Plaid dashboard UI in Cashflow/Profile
-- [x] Free users limited to 1 bank; Pro users can connect more
-- [x] Plaid account balances feed Assets/Liabilities/Overview calculations
-- [x] Plaid transaction import feeds Cashflow
-- [ ] Verify production Plaid credentials and environment mode
-- [ ] QA bank connection, sync, duplicate handling, disconnect, and account refresh
-- [ ] Decide whether Plaid is a launch feature or hidden until after Product Hunt
-
-### AI Categorisation
-
-- [x] Client now calls server route `/api/categorise`
-- [x] Server route uses `ANTHROPIC_API_KEY` instead of exposing a client-side key
-- [x] `.env.example` includes `ANTHROPIC_API_KEY`
-- [ ] Verify production env var is present
-- [ ] QA categorisation accuracy and fallback behavior
-- [ ] Add visible error/fallback handling if categorisation fails
-
-### Distribution Experiments
-
-- [x] FIRE Type quiz page at `/fire-type`
-- [x] FIRE Type scoring and result storage in localStorage
-- [x] FIRE Type native share / clipboard share
-- [x] Fire Type analytics events
-- [x] Public share page at `/share`
-- [x] Dynamic OG image route for share cards
-- [x] Decide whether FIRE Type is a primary Product Hunt asset or secondary acquisition experiment
-- [x] Update share copy from “retire by” language to “freedom date / work optional” language
+**Distribution experiments**
+- FIRE Type quiz
+- share page
+- OG image route
+- analytics wiring for share-type flows
 
 ---
 
-## Phase 3 — Product Hunt Readiness 🔥 Current Focus
+## Current Focus — Private Beta Readiness 🔥
 
-*Goal: Make the public product strong enough for impatient launch traffic to understand, try, trust, and share.*
+*Goal: make the friends-and-family experience clear, calm, trustworthy, and useful before any broader push.*
 
-### Must Fix Before Launch
+### Must be true now
 
-- [x] **Fix main CTA path:** clicking the primary homepage CTA must immediately open or scroll to the first calculator step. No dead-feeling click, hidden flow, or repeated CTA.
-- [x] **Align live homepage copy:** hero should use “Find your freedom date” / “work can become optional” / “monthly moves that bring freedom closer.”
-- [x] **Rename primary CTA:** prefer “Find my freedom date” over “Calculate my FIRE number.”
-- [x] **Make first calculator step obvious:** show a clear “Step 1” prompt, input, progress, and continue button above the fold after CTA click.
-- [x] **Show the differentiator visually:** above the fold or on the result screen, show example monthly moves like “Invest +$300/mo → freedom 1.8 years sooner.”
-- [x] **Add trust line near hero/result:** privacy + transparent assumptions. City/tax methodology can appear as proof, but must not become the main promise.
-- [x] **Update retirement-heavy copy:** replace “retire by” where it weakens the broader freedom/work-optional positioning.
-- [ ] **Mobile QA:** complete full no-login calculator flow on mobile viewport and fix layout/CTA issues.
-- [ ] **End-to-end no-login QA:** homepage → calculator → result → adjust inputs → share/save path must work without account creation.
+- [ ] Full no-login calculator flow works cleanly on mobile.
+- [ ] Homepage CTA clearly starts the calculator with no dead feeling.
+- [ ] Result clearly shows freedom date plus at least one concrete next move.
+- [ ] The first session does not push login, payment, bank connection, or feedback too early.
+- [ ] The result explains why the number is believable enough to trust.
+- [ ] The copy feels broader than “retire early calculator” and closer to financial freedom / reduced stress.
+- [ ] The public path feels useful for beginners, not only FIRE hobbyists.
 
-### Product Hunt Launch Assets
+### Beta instrumentation and learning
 
-- [ ] Product Hunt tagline: “Personal finance that sets you free.”
-- [ ] Product Hunt short description: “UntilFire starts with your freedom date, then gives you a plan to bring work optionality closer. Free, no login.”
-- [ ] Maker first comment: personal story + why FIRE tools need to guide the path, not just hand over a number. Use the Duolingo analogy if helpful: good tools do not only show the answer; they help you get there.
-- [ ] 20–40 second demo GIF/video: enter inputs → get freedom date → see monthly moves.
-- [ ] 3–5 screenshots: hero, calculator step, result, monthly move/plan, dashboard continuity. Avoid making city/tax comparison the hero screenshot.
-- [ ] Simple FAQ answers: calculation assumptions, privacy, who it is for, why it is free.
+- [ ] Track hero CTA click, calculator start, step completion, reveal, save/share/login clicks.
+- [ ] Confirm feedback path only appears after value and uses calm wording.
+- [ ] Review dropoff points in the current anonymous funnel.
+- [ ] Capture what users want next: investing help, spending help, or income help.
 
-### Shareability & Conversion
+### Verification and hardening
 
-- [ ] Result page should produce a shareable insight without exposing sensitive finances.
-- [ ] Refine `/share` and OG cards around freedom date or city insight, not raw net worth.
-- [ ] Add “save my result” email capture after the reveal, not before the aha moment.
-- [ ] Keep login secondary until after the user has seen value.
-- [ ] Track funnel analytics: hero CTA click, calculator start, each step completion, result reveal, share/save/login clicks.
+- [ ] Verify production Stripe env vars and webhook signing secret on Vercel.
+- [ ] Test full Stripe flow: checkout → return → sync → portal.
+- [ ] Verify production Plaid credentials and mode.
+- [ ] QA bank connect / sync / refresh / disconnect / duplicate handling.
+- [ ] Verify server-side categorisation env vars and fallback behavior.
+- [ ] Add visible fallback/error handling where categorisation fails.
 
-### Acceptance Criteria for Launch Readiness
+### Documentation hygiene
 
+- [ ] Resolve overlap between root overview, PRD, roadmap, and positioning docs.
+- [ ] Decide canonical agent-context notes vs legacy context bundles.
+- [ ] Archive or repurpose stale planning notes that are no longer active working docs.
+
+### Private beta gate
+
+Minimum gate before wider distribution:
+- [ ] 50 real visitors
+- [ ] 20 completed freedom-date results
+- [ ] 5 feedback replies
+- [ ] zero critical flow issues
+
+Stronger gate:
+- [ ] 100 visitors
+- [ ] 50 completed results
+- [ ] 10 people willing to support/comment on launch
+- [ ] zero critical flow issues
+
+---
+
+## Next Focus — Soft Public Launch
+
+*Goal: test whether the product story and funnel hold up outside friends-and-family before Product Hunt.*
+
+### Channels
+- [ ] soft Reddit launch in relevant communities / weekly promo threads
+- [ ] X launch thread from @GetUntilFire
+- [ ] lightweight founder-led content cadence around freedom date, stress reduction, and monthly moves
+- [ ] limited outreach to warm communities before broad launch spikes
+
+### Funnel quality goals
 - [ ] A new visitor can understand the product in 5 seconds.
 - [ ] A new visitor can start the calculator in 1 click.
 - [ ] A new visitor can reach a useful result in about 60 seconds.
-- [ ] The result explains the FIRE number, timeline, and at least one concrete monthly move.
-- [ ] The page answers “can I trust this?” before users ask.
-- [ ] The launch page has no obvious broken CTA, console error, or mobile layout blocker.
+- [ ] The result explains the number, timeline, and at least one move.
+- [ ] Mobile experience has no obvious blockers.
+- [ ] No critical console, CTA, or layout issues in the public funnel.
+
+### Conversion / retention setup
+- [ ] add “save my result” or equivalent after reveal, not before
+- [ ] refine share insight around freedom date or city insight, not sensitive finances
+- [ ] improve dashboard handoff so users keep their result and first next move
+- [ ] decide whether FIRE Type stays public, secondary, or hidden for the launch path
 
 ---
 
-## Phase 4 — Post-Launch Growth & Early Revenue 📈
+## Product Hunt Readiness — Only After Beta Gate ✅ Then Launch Prep
 
-*Goal: Convert launch attention into repeat usage, email leads, and first paying customers.*
+*Goal: package a proven funnel, not use Product Hunt to discover basic UX problems.*
+
+### Launch assets
+- [ ] Product Hunt tagline aligned to the broader financial freedom story
+- [ ] short description centered on freedom date + guided path
+- [ ] maker comment with personal story and “UntilFire does it with you” angle
+- [ ] 20–40 second demo clip
+- [ ] 3–5 screenshots: hero, calculator step, result, next move, dashboard continuity
+- [ ] FAQ answers: assumptions, privacy, who it is for, why it is free
+
+### Launch criteria
+- [ ] beta gate met first
+- [ ] soft public launch shows acceptable completion and no critical trust blockers
+- [ ] messaging feels broader than a niche FIRE calculator
+- [ ] share path is clear and non-sensitive
+
+---
+
+## Post-Launch Growth & Early Revenue
+
+*Goal: turn launch attention into repeat usage, email capture, and first paying customers.*
 
 ### Growth
-
-- [ ] Product Hunt launch and follow-up engagement
-- [ ] Reddit launch post in relevant weekly promo/community threads
-- [ ] Hacker News Show HN post
-- [ ] X launch thread from @GetUntilFire
-- [ ] City SEO expansion from first pages to 50+ pages, framed as local trust and acquisition rather than core product positioning
-- [ ] FIRE topic pages linked from calculator/result flows
-- [ ] Lightweight founder-led content cadence around freedom date, work optionality, and monthly moves
+- [ ] city SEO expansion beyond the first set of pages
+- [ ] FIRE / freedom topic pages linked from result flows
+- [ ] creator / newsletter / podcast outreach once the funnel proves itself
+- [ ] referral loop built around freedom-date insight, not private financial details
 
 ### Product
-
-- [ ] Improve “adjust inputs” flow from result screen
-- [ ] Scenario simulator on reveal screen: save more, earn more, reduce expenses, change city — presented as “moves that bring freedom closer,” not raw calculators
-- [ ] Better result explanation for beginners: FIRE number, withdrawal rate, assumptions, timeline
-- [ ] Email result summary with top monthly move
-- [ ] Dashboard handoff that preserves calculator result and next action
-- [ ] Sync custom categories/sub-categories to Supabase so they work across devices
-- [ ] Persist active dashboard tab in URL query param, e.g. `?tab=reports`
+- [ ] improve adjust-inputs flow from result screen
+- [ ] improve beginner explanation of assumptions and methodology
+- [ ] email result summary with top move
+- [ ] sync custom dashboard categories to Supabase across devices
+- [ ] persist useful dashboard views in URL / state cleanly
 
 ### Monetisation
-
-- [ ] Finalize free vs Pro packaging around the current $4.99/month Pro price
-- [ ] Enforce Pro unlocks only after free value is delivered
-- [ ] Email onboarding sequence: result saved, top move, dashboard reminder, Pro upgrade
-- [ ] Pricing page copy aligned with “monthly moves adviser,” not generic dashboard access
-- [ ] Keep actual Stripe price IDs in Vercel/env only, not docs or logs
+- [ ] finalize free vs Pro packaging around the current beta pricing approach
+- [ ] keep paid asks after free value is delivered
+- [ ] align pricing page around guidance / monthly moves, not generic dashboard access
+- [ ] keep Stripe identifiers and secrets out of docs and notes
 
 ---
 
-## Phase 5 — Monthly Moves Adviser 📅
+## Monthly Moves Adviser
 
-*Goal: Make UntilFire useful every month, not just once.*
+*Goal: make UntilFire useful every month, not just once.*
 
-### Core Adviser Feature
+### Core adviser layer
+- [ ] personalized monthly action plan based on spending, income, city, savings rate, and timeline
+- [ ] recommendations framed as clear moves with freedom-date impact
+- [ ] explanation of tradeoffs: impact, difficulty, confidence, and why it matters
+- [ ] editable assumptions so guidance feels understandable, not magical
+- [ ] monthly progress card or email
 
-- [ ] Personalized monthly FIRE action plan based on actual spending, income, city, savings rate, and timeline
-- [ ] “This month: invest $300 more and your freedom date moves 4 months closer” style recommendations
-- [ ] Explain tradeoffs clearly: impact, difficulty, confidence, and why it matters
-- [ ] Keep recommendations grounded in user data and editable assumptions
-- [ ] Monthly progress email or dashboard card
-
-### Supporting Features
-
-- [ ] Spending reports connected to freedom-date impact
-- [ ] Recurring income/bill insights connected to monthly moves
-- [ ] Coast FIRE and Barista FIRE scenario modelling
-- [ ] Better projection confidence and scenario comparison
-- [ ] Optional bank/Plaid deepening only if it improves monthly moves, not as a budgeting-app detour
+### Supporting product depth
+- [ ] spending reports tied directly to freedom-date impact
+- [ ] recurring bills and income insights tied to monthly moves
+- [ ] Coast FIRE / Barista FIRE scenarios
+- [ ] stronger scenario comparison and confidence ranges
+- [ ] optional deeper bank integration only if it clearly improves advice quality
 
 ---
 
-## Phase 6 — Scale & Depth 📅
+## Later Depth
 
-*Goal: Become the default entry point for people who want work to become optional.*
+*Goal: deepen the product after the main funnel, guidance loop, and retention model are working.*
 
-### Product Depth
+### Product depth
+- [ ] partner / spouse mode
+- [ ] advanced assumptions editor
+- [ ] better international depth for priority regions once demand justifies it
+- [ ] installable PWA or stronger mobile web shell
 
-- [ ] Partner/spouse mode for two-income households
-- [ ] Advanced assumptions editor: returns, inflation, withdrawal rate, tax assumptions
-- [ ] International expansion improvements for high-demand countries/cities
-- [ ] PWA installable mobile experience
-
-### Growth & Platform
-
-- [ ] Referral loop: share a freedom-date insight, not private financial details
-- [ ] Partnerships with FIRE creators/newsletters/podcasts
-- [ ] Embeddable FIRE/freedom-date calculator for partner sites
-- [ ] Public methodology page for SEO and trust
+### Platform / trust
+- [ ] public methodology page
+- [ ] embeddable calculator for partners
+- [ ] creator / partner integrations
 
 ---
 
-## Priority Decisions
+## Priority Decisions Currently Set
 
-John has chosen the next product direction:
-
-1. **Launch path:** Do private/friends beta and soft public launch on Reddit/X before Product Hunt.
-2. **Readiness gate:** Use beta/soft-launch quotas before PH: roughly 50 real visitors, 20 completed freedom-date results, 5 feedback replies, and zero critical flow issues. Stronger gate: 100 visitors, 50 completed results, and 10 people willing to support/comment.
-3. **Core aha:** Lead with “freedom date + guided plan.” The result should not stop at a number/date; UntilFire should feel like it is doing the journey with the user.
-4. **Plaid:** Keep bank connection as a logged-in dashboard feature after trust is built; do not make it central to Product Hunt.
-5. **FIRE Type:** Keep quiz as a secondary social/share loop, not the main launch promise.
-6. **Monetisation:** Keep Stripe/Pro infrastructure ready, but soft-hide paid conversion until the monthly moves adviser is stronger.
-7. **Next sprint:** Product Hunt Funnel Sprint — keep copy centered on “UntilFire does it with you,” show the plan/monthly move clearly, keep city/tax as trust proof, QA mobile/no-login flow, update share copy, and prepare launch assets.
+1. **Category:** frame UntilFire broadly as a financial freedom app, not only a FIRE tool.
+2. **Emotional center:** freedom from financial stress and work are the same core story.
+3. **Global story:** keep international / cross-border depth as supporting proof for now, not the lead promise.
+4. **Launch path:** private beta first, then soft public launch, then Product Hunt only after the beta gate is met.
+5. **Plaid:** keep bank connection secondary until trust is earned; do not make it the hero path.
+6. **Monetisation:** keep paid infrastructure ready, but avoid early paywall pressure before the adviser loop is stronger.
+7. **Current roadmap emphasis:** harden the current funnel, verify built infrastructure, clean overlapping docs, and learn from beta behavior.
 
 ---
 
 ## Metrics Targets
 
-| Metric | Product Hunt Readiness | 90 Days After Launch | Scale Target |
+| Metric | Private Beta Gate | Soft Public Goal | 90 Days After Public Launch |
 |---|---|---|---|
-| Homepage → calculator start | 35%+ | 40%+ | 45%+ |
-| Calculator completion rate | 45%+ | 55%+ | 60%+ |
-| Result → save/share/login action | 10%+ | 18%+ | 25%+ |
-| Monthly active users | — | 1,000 | 10,000 |
-| Registered users | — | 300 | 4,000 |
-| Paid subscribers | — | 50 | 800 |
-| MRR | — | $450 | $7,200 |
+| Homepage → calculator start | qualitative clear pass | 35%+ | 40%+ |
+| Calculator completion rate | 20 completed results minimum | 45%+ | 55%+ |
+| Result → save/share/login action | observe baseline | 10%+ | 18%+ |
+| Monthly active users | — | 250+ | 1,000 |
+| Registered users | — | 75+ | 300 |
+| Paid subscribers | — | low / experimental | 50 |
+| MRR | — | exploratory | $450+ |
 
 ---
 
-## What We're Deliberately NOT Building Yet
+## What We Are Deliberately NOT Building Yet
 
-- Investment account aggregation as a Product Hunt launch dependency — too much trust/regulatory complexity before PMF
-- Tax-loss harvesting advice — requires regulated advice boundaries
-- Advisor marketplace — distracts from direct-to-consumer clarity
-- Native mobile app — web-first until the funnel and retention are proven
-- Heavy budgeting-app parity — UntilFire should show how money choices affect freedom, not become another generic budgeting tool
-- Login-first onboarding — conflicts with the free/no-login first value promise
+- native mobile app before the web funnel is proven
+- heavy budgeting-app parity for its own sake
+- login-first onboarding
+- making Plaid a first-session dependency
+- advanced advice that creates regulated-advice risk
+- broad global expansion as the main public story before the core positioning wins

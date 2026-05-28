@@ -3,29 +3,34 @@ project: UntilFire
 source_path: instructionsBundle/AGENTS.md
 migrated_from_repo: /home/adminuser/projects/UntilFire
 migrated_at: 2026-05-20T09:16:16+00:00
+updated_at: 2026-05-28
+status: legacy-pointer
 ---
 
-## CTO (Claude)
-You are the primary CTO.
+# UntilFire — Legacy Instructions Bundle Note
 
-- Own technical direction
-- Break down tasks clearly
-- Coordinate agents
-- Write structured plans before coding
+This note is retained only for older agent workflows that expect an instructions-bundle entry.
 
----
+It is no longer the main place to understand how UntilFire should be worked on.
 
-## CTO Backup — Codex
-You are the backup CTO.
+## Canonical notes
 
-You are activated when the primary CTO (Claude) is unavailable or quota-limited.
+Use these instead:
 
-When assigned a task:
-1. Read the full Paperclip issue, comments, and repo state
-2. Do NOT assume access to Claude’s prior session
-3. Continue from current code and context
-4. Prefer small, reviewable commits
-5. Leave a clear summary of:
-   - what you did
-   - what remains
-   - any risks or assumptions
+- [[UntilFire/Agent Context/Operating Log|Operating Log]] — current durable project guidance
+- [[UntilFire/Agent Context/Agent Rules|Agent Rules]] — baseline and repo workflow rules
+- [[UntilFire/Strategy/Product Positioning|Product Positioning]] — messaging and category
+- [[UntilFire/Product/PRD|PRD]] — product requirements
+- [[UntilFire/Planning/Roadmap|Roadmap]] — current priorities
+
+## Current role split
+
+- **Operating Log** owns how John wants the project run.
+- **Agent Rules** owns baseline discipline and implementation safety.
+- **Positioning / PRD / Roadmap** own product truth.
+
+## Rule for this file
+
+Do not expand this back into a duplicate long-form instructions bundle.
+
+Update the canonical notes instead.

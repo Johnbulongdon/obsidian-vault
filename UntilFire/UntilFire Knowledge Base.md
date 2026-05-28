@@ -20,13 +20,16 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 - [[UntilFire/Product/Pricing and Pro Packaging|Pricing and Pro Packaging]]
 - [[UntilFire/Planning/Roadmap|Roadmap]]
 - [[UntilFire/Planning/Beta Launch Checklist|Beta Launch Checklist]]
+- [[UntilFire/Planning/Vault Structure Audit - 2026-05-28|Vault Structure Audit — 2026-05-28]]
 - [[UntilFire/Strategy/Decision Log|Decision Log]]
 - [[UntilFire/Strategy/Market Research|Market Research]]
 - [[UntilFire/Marketing/X Content Calendar|X Content Calendar]]
 - [[UntilFire/Engineering/Development Log|Development Log]]
-- [[UntilFire/Agent Context/AI Context|AI Context]]
-- [[UntilFire/Agent Context/Agent Rules|Agent Rules]]
 - [[UntilFire/Agent Context/Operating Log|Operating Log]]
+- [[UntilFire/Agent Context/Agent Rules|Agent Rules]]
+- [[UntilFire/Agent Context/AI Context|AI Context (legacy pointer)]]
+- [[UntilFire/Agent Context/Claude Context|Claude Context (legacy pointer)]]
+- [[UntilFire/Agent Context/Instructions Bundle - Agents|Instructions Bundle - Agents (legacy pointer)]]
 
 ## Migrated source map
 

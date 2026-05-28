@@ -3,201 +3,80 @@ project: UntilFire
 source_path: README.md
 migrated_from_repo: /home/adminuser/projects/UntilFire
 migrated_at: 2026-05-20T09:16:16+00:00
+updated_at: 2026-05-28
+role: overview
 ---
 
-** UntilFire
-The personal finance app built for FIRE.
-See your FIRE number, your timeline, and the money moves that get you there faster.
-Free, no login.
+# UntilFire
 
----
+UntilFire is a **financial freedom app**.
 
-## Why UntilFire exists
+It helps users see their freedom date, understand where they stand, and get a clear next move that can bring work optionality closer.
 
-Most finance apps track what already happened. They show you where your money went. They leave you alone.
+**Core line:** Personal finance that sets you free.
 
-UntilFire focuses on what you should do next — and shows you the exact cost, in years of freedom, of each decision you make or avoid.
+## What UntilFire is
 
-- Save an extra $500/month? **That's 2.1 years sooner.**
-- Take a 10% pay cut? **That's 3.4 years later.**
-- Cut one recurring subscription? **That's 8 months back.**
+UntilFire is not meant to be only a calculator, only a tracker, or only a dashboard.
 
-Every input has a visible, quantified consequence. That's the Decision Impact Engine.
+It starts with a fast no-login value moment, then continues into guidance:
 
----
+- **Freedom date first** — give the user a concrete answer quickly
+- **Clear next move** — show what to do next, not just what the number is
+- **Trust proof** — city, tax, and global context support confidence
+- **Continuity** — the dashboard and future adviser layer help users keep going
 
-## The core product promise
+## What it is not
 
-UntilFire helps you understand how every financial decision accelerates or delays your path to financial independence — and shows you what to do next.
+UntilFire should not be framed primarily as:
 
-Users feel **clarity**, **momentum**, and **strategic control** over their future. Not guilt or shame.
+- a generic budgeting app
+- a dense retirement simulator
+- a city/tax calculator with extra features
+- a finance-content library
 
----
+## Current product state
 
-## Decision Impact Engine
+### Public / no-login layer
+- Landing page and calculator flow
+- Freedom-date result
+- City / tax / assumptions trust layer
+- Calculator hub and learn content
 
-Unlike calculators that return a single number and walk away, UntilFire shows the _delta_: how many years sooner (or later) you reach FIRE based on each choice. The reveal screen includes an interactive decision grid — drag sliders to see how cutting dining or investing more moves your retirement date in real time.
+### Logged-in layer
+- Dashboard
+- Tracking and reporting
+- Projection and Monte Carlo views
+- Subscription / Pro infrastructure in progress
+- Bank connection and AI categorisation need production verification
 
-The "Your Highest-Impact Move" card in the dashboard shows the top acceleration opportunity from your live numbers, ranked by years saved: save more, cut expenses, or grow income — whichever moves your date the most.
+## Current priorities
 
----
+1. Harden the private beta experience.
+2. Make the result feel calm, clear, and useful on mobile.
+3. Show freedom date plus one practical next move before any pressure.
+4. Verify built infrastructure like Stripe, Plaid, and server-side categorisation.
+5. Learn from beta behavior before broader launch.
 
-## Current features
+## Canonical notes
 
-**Free — no login required**
+Use these notes instead of growing this file into a second PRD or roadmap:
 
-- **Freedom-date result** — the first tangible answer: when work can become optional
-- **Guided next move** — one concrete action that shows how to bring the date closer
-- **Interactive decision grid** — adjust dining-cut % and extra savings with sliders; FIRE date impact updates live
-- **City/tax trust layer** — cost-of-living normalization and tax assumptions support credibility, but they are not the main promise
-- **Quantified recommendations** — "Raise your savings rate from 12% to 20% → 2.3 years sooner" instead of generic advice
-- **Wizard → dashboard handoff** — calculator prefill flows into dashboard on first login
+- [[UntilFire/Strategy/Product Positioning|Product Positioning]] — messaging, category, emotional promise
+- [[UntilFire/Product/PRD|PRD]] — product requirements and feature behavior
+- [[UntilFire/Planning/Roadmap|Roadmap]] — current priorities and sequencing
+- [[UntilFire/Strategy/Decision Log|Decision Log]] — durable why behind major choices
+- [[UntilFire/Agent Context/Operating Log|Operating Log]] — current agent guidance and project conventions
 
-**Logged-in dashboard**
+## Related entry points
 
-- **Acceleration card** — always-visible highest-impact move ranked by years saved
-- **FIRE projection chart** — stacked contributions vs. market growth over 50 years
-- **Monte Carlo simulation** — probability of reaching FIRE given market volatility
-- **Multi-currency expense tracking** — transactions in any currency, normalized to USD
-- **Recurring planner** — automatic detection + manual entry of recurring bills
-- **Spending reports** — income vs. expenses chart, category breakdown, 3/6/12m selector
-- **Investment simulations** — DCA with 3-scenario overlay, age-based glide path
+- [[UntilFire/UntilFire Knowledge Base|UntilFire Knowledge Base]]
+- [[UntilFire/Product/User Journey|User Journey]]
+- [[UntilFire/Product/Personas|Personas]]
+- [[UntilFire/Strategy/Market Research|Market Research]]
 
-**Growth / SEO**
+## Rule for this file
 
-- 5 city landing pages (`/fire-number/austin-tx`, `/fire-number/london`, `/fire-number/singapore`, `/fire-number/shanghai`, `/fire-number/dubai`)
-- Public Learning Hub with 4 guided stages and 11 SEO articles
-- FIRE Type personality quiz at `/fire-type`
-- 6 standalone calculators at `/calculators`
+This note is a **short orientation layer only**.
 
-## Latest updates
-
-- Hardened `/api/waitlist` with email normalization, format validation, duplicate-safe success handling, and basic burst protection
-- Removed stale `/debug` crawler blocking and cleaned the Plaid connection panel so its status/error UI uses stable plain-text copy
-- Upgraded the Next.js baseline and dependency overrides so the repo validates cleanly on the latest `main` checkout with `npm run validate`
-
----
-
-## Long-term vision
-
-UntilFire becomes the operating system for your financial independence journey: a live, personalized map where every decision has a visible price tag in years of freedom.
-
-Roadmap:
-- AI-guided monthly action plans based on actual spending
-- Plaid-connected real-time delta tracking
-- Milestone notifications when you hit an acceleration target
-- Income acceleration pathways tailored to your FIRE type
-
----
-
-## Tech stack
-
-| Layer | Tech |
-|---|---|
-| Framework | Next.js 15 (App Router) |
-| Auth + DB | Supabase (Google OAuth, Postgres, RLS) |
-| Styling | Tailwind CSS v4 + inline styles |
-| Charts | Recharts |
-| Payments | Stripe |
-| Email | Resend |
-| Hosting | Vercel |
-| Analytics | Vercel Analytics, PostHog, Google Analytics |
-
-**Design system:** White/green. Background `#F7F9FB`, primary green `#064E3B` / `#059669`, teal `#22d3a5`, accent orange `#f97316`. Fonts: Manrope (headings), Inter (UI).
-
----
-
-## How it compares
-
-| Bucket | Who | Gap |
-|---|---|---|
-| **FIRE Calculators** | FIRECalc, cFIREsim | Give you a success rate, then leave you alone |
-| **FIRE Planners** | ProjectionLab, Boldin | Powerful but 20+ min setup; no guidance on what to do |
-| **Budgeting Apps** | Monarch, YNAB | Great visibility; FIRE is an afterthought |
-| **UntilFire** | — | 60-second answer + decision impact + what to do next |
-
----
-
-## Major routes
-
-| Route | Description |
-|---|---|
-| `/` | Landing page + 5-screen FIRE calculator wizard |
-| `/fire-number/[city-slug]` | City-specific SEO landing pages |
-| `/dashboard` | Logged-in Freedom Acceleration Engine dashboard |
-| `/login` | Google OAuth sign-in |
-| `/calculators` | Calculator hub |
-| `/learn` | Stage-based public Learning Hub |
-| `/learn/stages/[stage]` | Public FIRE learning paths |
-| `/learn/[slug]` | Individual SEO articles |
-| `/fire-type` | FIRE personality quiz |
-| `/auth/callback` | OAuth callback |
-| `/api/waitlist` | Email capture |
-| `/api/stripe/*` | Checkout, portal, webhook |
-
----
-
-## Key files
-
-| File | Purpose |
-|---|---|
-| `app/page.tsx` | Landing + full calculator wizard + interactive reveal |
-| `app/components/landing/HeroScreen.tsx` | Hero copy and stats strip |
-| `app/dashboard/page.tsx` | Dashboard shell, all tabs, acceleration card |
-| `app/dashboard/TransactionsTab.tsx` | Cashflow two-pane with AI categorisation |
-| `lib/fire/index.ts` | FIRE engine surface, `recommendActionsForReveal` |
-| `lib/fire-data.ts` | 263 cities, tax logic, `calcFIRE()` |
-| `lib/supabase.ts` | Supabase client, `isPro()` |
-| `lib/journey.ts` | `CalculatorPrefill` type + localStorage helpers |
-| `app/globals.css` | Global design tokens and component classes |
-
----
-
-## Environment variables
-
-Copy `.env.example` to `.env.local`:
-
-```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-STRIPE_SECRET_KEY=
-STRIPE_PRO_PRICE_ID=
-STRIPE_WEBHOOK_SECRET= [REDACTED]
-NEXT_PUBLIC_POSTHOG_KEY=
-NEXT_PUBLIC_POSTHOG_HOST=
-```
-
-## Dev
-
-```bash
-npm install
-npm run dev          # localhost:3000
-npm run build        # production build
-npm run typecheck    # tsc --noEmit
-npm run lint         # eslint .
-```
-
----
-
-## Tiers
-
-| Tier | Price | What you get |
-|---|---|---|
-| **Free** | $0 | 60-second freedom-date answer, first next move, interactive decision impact grid, city/tax trust details — no login |
-| **Pro** | $9/mo | Full dashboard: acceleration card, expense tracking, Monte Carlo, monthly action plans |
-
----
-
-## Supabase tables
-
-- `user_budget` — income, expense categories, FIRE profile per user
-- `expenses` — individual transactions (multi-currency, AI-categorised)
-- `waitlist` — pre-signup email captures
-- `subscriptions` — Stripe subscription status
-
----
-
-## Deployment
-
-Push to `main` triggers a Vercel deploy automatically.
+Do not turn it into a second positioning doc, second PRD, or second roadmap. Update the canonical notes above instead.
