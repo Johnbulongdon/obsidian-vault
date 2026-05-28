@@ -78,6 +78,8 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 - [[UntilFire/Planning/Sprints/sprint-14-onboarding-email|sprint-14-onboarding-email]] ← `docs/sprints/sprint-14-onboarding-email.md`
 - [[UntilFire/Planning/Sprints/sprint-15-weekly-fire-report|sprint-15-weekly-fire-report]] ← `docs/sprints/sprint-15-weekly-fire-report.md`
 - [[UntilFire/Planning/Sprints/sprint-16-seo-audit|sprint-16-seo-audit]] ← `docs/sprints/sprint-16-seo-audit.md`
+- [[UntilFire/Planning/Sprints/sprint-17-result-screen-product-moment|sprint-17-result-screen-product-moment]] — new vault planning note mapped from chat Phase 2
+- [[UntilFire/Planning/Sprints/sprint-18-monthly-discipline-loop|sprint-18-monthly-discipline-loop]] — new vault planning note mapped from chat Phase 3
 
 ### UntilFire/Product
 - [[UntilFire/Product/PRD|PRD]] ← `docs/PRD.md`
