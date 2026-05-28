@@ -80,6 +80,9 @@ This Obsidian folder is the information layer for UntilFire. The GitHub repo sho
 - [[UntilFire/Planning/Sprints/sprint-16-seo-audit|sprint-16-seo-audit]] ← `docs/sprints/sprint-16-seo-audit.md`
 - [[UntilFire/Planning/Sprints/sprint-17-result-screen-product-moment|sprint-17-result-screen-product-moment]] — new vault planning note mapped from chat Phase 2
 - [[UntilFire/Planning/Sprints/sprint-18-monthly-discipline-loop|sprint-18-monthly-discipline-loop]] — new vault planning note mapped from chat Phase 3
+- [[UntilFire/Planning/Sprints/sprint-19-dashboard-progress-not-noise|sprint-19-dashboard-progress-not-noise]] — new vault planning note mapped from chat Phase 4
+- [[UntilFire/Planning/Sprints/sprint-20-tracking-that-feels-useful|sprint-20-tracking-that-feels-useful]] — new vault planning note mapped from chat Phase 5
+- [[UntilFire/Planning/Sprints/sprint-21-pro-around-continuity-and-guidance|sprint-21-pro-around-continuity-and-guidance]] — new vault planning note mapped from chat Phase 6
 
 ### UntilFire/Product
 - [[UntilFire/Product/PRD|PRD]] ← `docs/PRD.md`
