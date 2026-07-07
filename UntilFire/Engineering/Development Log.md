@@ -28,6 +28,12 @@ After meaningful UntilFire work:
 
 ## Recent development trail
 
+### 2026-07-07 — Three more directory badges added to footer: SaaS City, LaunchBuff, StartupList.ing
+
+- Added footer badges for [SaaS City](https://saascity.io/live/untilfire), [LaunchBuff](https://launchbuff.com), and [StartupList.ing](https://startuplist.ing/p/xoooie) directly to `main` (commits `176aa8c`, `3abfff3`, `4ed640a`), same pattern as the existing Launchstag/Stack Directory badges.
+- **To check: does StartupList.ing give a dofollow link?** Its badge/listing link (`https://startuplist.ing/p/xoooie?utm_source=www.untilfire.com`) was added without confirming link `rel` attributes on their side — some directories in the repo's `docs/BACKLINK_SUBMISSIONS.md` ledger explicitly use `nofollow` (e.g. Noonlaunch) while others advertise permanent dofollow (e.g. StartupLibrary). Need to verify which applies here before counting this as an SEO-value backlink vs. just a referral/trust badge.
+- Note: none of these three new badges (SaaS City, LaunchBuff, StartupList.ing) are logged yet in the repo's `docs/BACKLINK_SUBMISSIONS.md` campaign ledger — that file only covers submissions through FirstLook/StartupLibrary/MarketingDB. Worth adding entries there too so the campaign ledger and the live footer stay in sync.
+
 ### 2026-07-07 — Production reverted after manual promotion of an unrelated branch; fixed by merging PR #115 to `main`
 
 - Incident: `www.untilfire.com` / `untilfire.com` briefly served the pre-redesign landing page again after John manually promoted `codex/backlinks-2026-07-03` (commit `e9158a4`, an unrelated backlink/badge-logging branch) to production from the Vercel dashboard, overwriting the live "born twice" redesign.
@@ -217,10 +223,12 @@ After meaningful UntilFire work:
 
 ## Current useful next actions
 
-1. Merge or close `codex/backlinks-2026-07-03` so it can't be manually re-promoted over the current redesign; going forward, ship to production only via merges to `main`.
-2. Sync `UntilFire/Planning/Roadmap.md` (vault, stale since 2026-05-28) against `docs/ROADMAP.md` (repo, June 2026) — the repo version is more current but neither mentions Expat FIRE, Rate My Portfolio, Scenarios comparison view, or the Android/PWA track, all of which have already shipped.
-3. Repo `CHANGELOG.md` hasn't had a new dated entry since the "Unreleased - 2026-06-15" section — everything from 2026-06-16 onward (Expat FIRE, SEO expansion, Rate My Portfolio, Scenarios redesign, Android/PWA, trial pricing, emergency fund change, born-twice redesign) is undocumented there too.
-4. Mobile QA: full no-login homepage → calculator/onboarding → freedom-date result → monthly move flow, now against the born-twice redesign.
-5. Verify the friends/family beta path on a real phone: clear copy, save confirmations, obvious nav, no surprise prompts.
-6. Confirm production Stripe/Plaid/PostHog environment only when needed; never write secret values into this vault.
-7. Keep updating this log after meaningful development so future agents start with current state instead of stale chat history.
+1. **Confirm whether StartupList.ing gives a dofollow link** on the badge/listing link before counting it toward the backlink acquisition goal — see the 2026-07-07 badge entry above.
+2. Merge or close `codex/backlinks-2026-07-03` so it can't be manually re-promoted over the current redesign; going forward, ship to production only via merges to `main`.
+3. Sync `UntilFire/Planning/Roadmap.md` (vault, stale since 2026-05-28) against `docs/ROADMAP.md` (repo, June 2026) — the repo version is more current but neither mentions Expat FIRE, Rate My Portfolio, Scenarios comparison view, or the Android/PWA track, all of which have already shipped.
+4. Repo `CHANGELOG.md` hasn't had a new dated entry since the "Unreleased - 2026-06-15" section — everything from 2026-06-16 onward (Expat FIRE, SEO expansion, Rate My Portfolio, Scenarios redesign, Android/PWA, trial pricing, emergency fund change, born-twice redesign) is undocumented there too.
+5. Repo `docs/BACKLINK_SUBMISSIONS.md` is missing the Launchstag, SaaS City, LaunchBuff, and StartupList.ing badges that are already live in the footer — worth a follow-up entry there per badge.
+6. Mobile QA: full no-login homepage → calculator/onboarding → freedom-date result → monthly move flow, now against the born-twice redesign.
+7. Verify the friends/family beta path on a real phone: clear copy, save confirmations, obvious nav, no surprise prompts.
+8. Confirm production Stripe/Plaid/PostHog environment only when needed; never write secret values into this vault.
+9. Keep updating this log after meaningful development so future agents start with current state instead of stale chat history.
