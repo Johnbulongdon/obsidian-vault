@@ -45,6 +45,121 @@ After meaningful UntilFire work:
 - Commits: `c747cf0` (redesign), `266401c` (ticker → trust band swap), `ef8da5f` (mask-fade trust strip, drop inaccurate trust cues).
 - Related: acquisition work shifted from Reddit/X/HN launch posts to guest-post outreach for backlinks — see [[UntilFire/Marketing/Guest Post Outreach]].
 
+> **Backfill note (added 2026-07-07):** the entries below from 2026-06-30 down to 2026-05-27 were missing from this log — five weeks of shipped work had no paper trail here. They are reconstructed from `git log` on `main` and the repo's `CHANGELOG.md`, not from live session notes, so verification/testing detail is thinner than usual. Treat dates/commit shas as accurate; treat "why" framing as best-effort reconstruction.
+
+### 2026-06-30 — Free trial pricing shipped: 30 days, then extended to 3 months (PR #113, #114)
+
+- Checkout now passes `trial_period_days` for first-time subscribers (detected by absence of a prior `stripe_subscription_id`); webhook handles `customer.subscription.trial_will_end` to send a Resend reminder email 3 days before the trial ends, idempotent via `profiles.trial_reminder_sent_at`.
+- Shipped first as a 30-day trial with a prominent "we'll email you before it ends" callout on pricing/upgrade-modal/landing Pro card, then same-day extended to 90 days (3 months) across all the same surfaces.
+- Commits: `5ede19f`, `691f573`.
+
+### 2026-06-29 — Android distribution track opened: PWA manifest + Android Studio TWA project for Play Store
+
+- Phase 1: PWA manifest, service worker, and icon set added so the app is installable as a PWA.
+- Phase 2 (Option B): a full Android Studio Trusted Web Activity (TWA) project scaffolded to wrap the PWA for Play Store submission.
+- Not yet reflected in `docs/ROADMAP.md`'s phase list — worth adding so future agents know this track exists and isn't still "later depth."
+- Commits: `9fe27fc`, `dcc3395` (merged via PR #111).
+
+### 2026-06-28 — Emergency fund guidance switched to a needs-only base with a six-month target
+
+- Emergency fund target changed from whatever base was previously used to a needs-only spending base, with the target raised to six months of needs.
+- Dashboard home now shows the needs-only emergency fund number directly.
+- Commits: `0606e9e`, `ceaba53`, `73d9f72`.
+
+### 2026-06-25 to 2026-06-27 — Reveal page motion polish (pre-"born twice")
+
+- Polish pass on the reveal/result page experience with added motion, ahead of the later full "born twice" landing redesign (2026-07-02).
+- Commits: `fbb2978`, `d3e876d`.
+
+### 2026-06-22 to 2026-06-25 — Backlink / directory badge acquisition push
+
+- Large batch of directory submissions and footer badges added as part of the backlink acquisition effort (the same lever behind the guest-post outreach plan): Stack Directory, Startup Fame, Tool Dynamo, Startup Fast (+ later "winner" badge), Wired Business, StartupBase, Fazier, MarketingDB, FirstLook, Startup Project, StartupLibrary, KittyLaunch, Noonlaunch, plus a shared backlink/directory ledger and repeated submission-status logging commits.
+- This activity continued on a separate branch (`codex/backlinks-2026-07-03`) into July — see the 2026-07-07 incident entry above; that branch is still open/unmerged.
+- Representative commits: `2d67739` (shared ledger), `f8fb0b2` (badge batch + submission log), `199c82a`, `0ed552a`, `f43e6d3`, `e95bdbe`.
+
+### 2026-06-18 to 2026-06-19 — "Rate My Portfolio" checkup shipped; Scenarios tab redesigned as comparison view
+
+- New portfolio checkup feature: Phase 1 rules-based checkup with a shareable report, Phase 2 adds a backtested performance chart vs. the S&P 500 (PR #106).
+- Scenarios tab redesigned as a side-by-side comparison view (PR #107), then refined same-week with select-to-compare, removable scenarios, and a fuller ticker list.
+- Neither feature appears in `docs/ROADMAP.md`'s phase checklists yet.
+- Commits: `2d097f2`, `8299a8a` (PR #106), `2524c64` (PR #107), `e2ea85f`.
+
+### 2026-06-17 — SEO expansion: state/region hubs, OG images at scale, 9 new education guides
+
+- New SEO surfaces: state hub pages, ranking hub pages, and 6 regional hub pages (Northeast, Southeast, Midwest, Southwest, Mountain West, West Coast), all with schema markup and dashboard nav links.
+- Dynamic OG images added across all 227 city pages plus all ranking/state pages.
+- `/learn` expanded with 9 new guides — 5 core investing guides and 4 saving/behavioral-finance guides (PR #65, #66).
+- Commits: `2a397b3`, `602509a`, `b69a604`, `ceac933`, `07e30f1`, `7fa9929`.
+
+### 2026-06-15 to 2026-06-16 — Expat FIRE calculator + geo-arbitrage globe; Goals redesign; agent startup checklist now requires ROADMAP/CHANGELOG
+
+- New public calculator at `/calculators/expat-fire` and a native "Expat FIRE" dashboard tab, seeded from the user's own data; ships with a full-bleed, theme-aware geo-arbitrage globe (dark ocean/white continents in light mode and inverse in dark mode) with zoom, hover popups showing FIRE-timing delta per city, and click-to-compare.
+- Goals page redesigned as a personal savings-goal tracker.
+- Dashboard onboarding `SetupChecklist` wired into the DashTab overview.
+- Cashflow UX and nav restructure alongside these.
+- Repo agent context updated to require reading `docs/ROADMAP.md` and `CHANGELOG.md` at the start of every task, and both docs synced to June 2026 state — this is the origin of the "Agent Startup Checklist" now in `CLAUDE.md`.
+- Commits: `3b05554`, `d922237`, `8983d82`, `8a83de8`, `8bacbd3` / `f896740` (theme-aware iterations), `b652750` (Goals), `e3d51b6`/`91186f3` (onboarding checklist), `7f65dc3` + `b314698` (ROADMAP/CHANGELOG sync + startup checklist rule), `65d60b5` (cashflow/nav restructure).
+
+### 2026-06-11 to 2026-06-13 — Demo video overhaul (v8 rebuild through v26)
+
+- Roughly 15 iterations rebuilding the 43-second product demo video: real product UI in motion (not onboarding screens), horizontal renderer, brand fonts, real bank logos in a marquee, a phone-notification "swipe away spending leaks" scene, beat-synced transitions locked to the soundtrack, and final color/axis polish for a white background.
+- Final render script: `demo video v26: render script for UntilFire 43s motion-graphics video`.
+- Commits: `e12a81e` … `f1f02c9` (v16) … `851615c` (v26 final); ~15 commits total, not individually itemized here.
+
+### 2026-06-09 to 2026-06-10 — Animated logo reveal + FIRE number landing glow (PR #56)
+
+- Animated UntilFire logo reveal assets added; FIRE number on the result screen gets a landing "pop" and glow effect when it appears.
+- CSV import's duplicate-detection review step finalized in the same window.
+- Commits: `eb6aa8f` (PR #56), `364f357`, `71bee3b`, `4c7ec96`.
+
+### 2026-06-05 to 2026-06-09 — FIRE Type result page fully redesigned: illustrated avatars, Trading Card, flat share poster
+
+- FIRE Type reveal replaced the generic emoji with 16 custom illustrated meme-archetype characters (one per FIRE type), extended to full-body bold-flat-art compositions after an initial broken pass was fixed.
+- Result page redesigned as a Trading Card layout on a dark background with a light-reveal animation.
+- Share card replaced with a clean white "Poster" design, simplified and flattened (drop shadows removed, avatar crop tightened) after a couple of framing iterations.
+- Wordmark bug fixed: orange accidentally applied to "Fire" text on the FIRE Type page.
+- Commits: `6bf9670`, `0ef070d`, `f7bb679`, `38b69b2`, `3572349`, `b40600a`, `55e2054`, `784e74d`, `83f4e58`/`dc3ab5f`, `cec56c5`, `b2bd962`, `e87c425`, `cf22b8b`, `0dc7854`, `2b7ad46`, `caa4b8c`, `16af871`.
+
+### 2026-06-05 — Category/emoji expansion; nav moved to sidebar sub-nav; Purchase Impact Calculator; recurring Plaid streams
+
+- Expense categories and sub-categories expanded for common budgeting patterns, including a new Utilities category; emoji palette for category customisation expanded from ~30 to ~90 options; category picker added inline on transaction rows and inside the AI review modal.
+- Money and Freedom sections moved from the dashboard's top bar into a collapsible sidebar sub-nav; Cashflow sub-tabs (Transactions, Categories, Recurring, Budgets) moved the same way.
+- New Purchase Impact Calculator, linked from the calculators hub and the Freedom Date tab.
+- Recurring tab gained a Plaid bank-streams section and a Monthly Net KPI; a subscription/investment panel and shareable FIRE Type card were added.
+- Commits: `1ebfe0d`, `0495ca0`, `5386702`, `cda5f2a`, `aa331c2`, `4119ffb`, `f35c3da`, `674f79e`, `da98900`, `c2e0cac`, `f428969`.
+
+### 2026-06-04 — Large SEO enrichment pass; welcome/retention emails via Resend; progress-chart accuracy fixes
+
+- SEO: Organization + FAQ schema added to the calculators hub and fire-number hub, server-rendered h1s/content added to homepage/calculator/learn pages via a server/client split, article bodies enriched with structured content, generic city pages deepened with FIRE-variant/savings content, sitemap freshness signals added for deepened pages.
+- Welcome email and Day-7 retention email shipped via Resend, rewritten twice same-day into a founder-voice tone with logo/branding polish; plan-recap email redesigned to match brand style (white background, brand colors, milestone graph).
+- Achievements: milestones moved off a standalone card and onto the progress chart as pin bubbles; milestone naming updated (added "2 Comma Club"), join date shown.
+- Progress chart accuracy: several fixes so the contributions-vs-market-gain breakdown uses actual Plaid cost-basis and portfolio snapshots instead of an overestimating cost-basis ratio, fixing a visible "V-dip" in the chart; chart defaulted to the breakdown view with the S&P 500 benchmark line eventually removed as redundant.
+- Also: refund support on expenses (full and partial), a month-over-month cashflow chart at the top of the Cashflow view.
+- Commits: `15d5a49`, `0ca2a7c`, `6380615`, `c92179a`, `9f8f45e`, `7f71c86`, `e0b6470`, `9780593`, `aeec2dc`, `df8d41f`, `bc01c96`, `19df1a5`, `646bf2c`/`50a78f4`, `619d975`, `4a1a493`, `e9aeb80`, `6b09998`, `ed30537`, `c25442f`, `37b5f43`, `99b7202`, `457e25e`.
+
+### 2026-06-03 — AI classification review step + need/want rules; dark mode persistence fixed; 10-bug code review pass
+
+- AI transaction classification got a review step (approve/skip per row) before applying, plus a per-sub-category need/want rule with mismatch detection when the rule conflicts with an existing transaction.
+- Dark mode now persists across page loads (this is the fix later referenced as PR #54 in `CHANGELOG.md`).
+- A 10-bug code-review pass landed covering AI classification correctness, stale mismatch detection, dead code, and performance; resolved via a same-day merge-conflict cleanup to make sure all 10 fixes survived onto `main`.
+- Commits: `cb1866c`, `6d33bad`, `c3899d7`, `757f4fc`, `36ad87a`, `2ee7928`, `9c83dbd`.
+
+### 2026-06-01 to 2026-06-02 — Dashboard Overview redesigned; full dark-mode rollout; CSV import hardened; categorise route moved to OpenRouter
+
+- Dashboard Overview tab redesigned to a dark-themed card layout matching a mockup; dark/light mode toggle added to the dashboard and mobile topbar, with a full pass converting hardcoded card/table/chart colors to CSS variables across TransactionsTab, RecurringTab, ReportsTab, ProfileTab, categories, and the donut chart.
+- CSV import hardened: WeChat Pay support (GBK encoding, Chinese headers, datetime parsing), a `transfer` transaction type, a notes field carried through import, currency-aware imports, and a fix for import dropdowns being invisible in dark mode.
+- AI categorisation route switched to OpenRouter; OG image redesigned to match current positioning (logo mark recreation, fixed an edge-route crash from an SVG logo fetch).
+- Budget mode toggle added (manual vs. predicted from history) with needs/wants classification.
+- Commits: `4ee7c48`, `a395ff5`, `c5f9b5e`, `d821eb0`, `9dd2e04`, `7cf694f`, `9c22a5d`, `78d8349`, `dcfc7be`, `173d352`, `5369bdf`, `13a7475`, `18d1bbb`, `f2cccd9`, `563b2b5`.
+
+### 2026-05-27 to 2026-05-30 — CSV import launched; dashboard/landing "sprint 17–22" overhaul; bank-logo trust strip; pricing copy fix
+
+- CSV import for transactions shipped for the first time, with duplicate detection, wired into the Transactions tab.
+- A run of dashboard/result-screen sprints (labeled Sprint 17 through 22 in commit messages) landed: result screen reframed as "a product moment," a monthly discipline loop on the dashboard, dashboard hero leading with freedom date + status + top move, top-spending-category insight tied to freedom-date impact, a freedom-date share card, email capture directly on the result screen, and beta trust/learning analytics events.
+- Trust strip switched from text bank-name labels to real bank/brokerage logo images (Chase, Vanguard, Citi, Robinhood, US Bank, etc.).
+- Pricing copy fixed to correctly state free tier = 1 bank + 1 brokerage, Pro = unlimited connections.
+- Commits: `ff8385d`, `22f4883`, `1837437`, `86ac447`, `f0822ae`, `25747c1`, `727da67`, `0a6ee2f`, `4befcee`, `e25c386`.
+
 ### 2026-05-26 — Emergency fund now excludes brokerage DCA cash; Google login uses canonical UntilFire URL
 
 - Repo update: dashboard emergency-fund logic now keeps brokerage cash in total cash/assets but excludes it from the emergency-fund "Current Savings" number when that cash is sitting in a brokerage account for scheduled investing.
@@ -103,7 +218,9 @@ After meaningful UntilFire work:
 ## Current useful next actions
 
 1. Merge or close `codex/backlinks-2026-07-03` so it can't be manually re-promoted over the current redesign; going forward, ship to production only via merges to `main`.
-2. Mobile QA: full no-login homepage → calculator/onboarding → freedom-date result → monthly move flow, now against the born-twice redesign.
-3. Verify the friends/family beta path on a real phone: clear copy, save confirmations, obvious nav, no surprise prompts.
-4. Confirm production Stripe/Plaid/PostHog environment only when needed; never write secret values into this vault.
-5. Keep updating this log after meaningful development so future agents start with current state instead of stale chat history.
+2. Sync `UntilFire/Planning/Roadmap.md` (vault, stale since 2026-05-28) against `docs/ROADMAP.md` (repo, June 2026) — the repo version is more current but neither mentions Expat FIRE, Rate My Portfolio, Scenarios comparison view, or the Android/PWA track, all of which have already shipped.
+3. Repo `CHANGELOG.md` hasn't had a new dated entry since the "Unreleased - 2026-06-15" section — everything from 2026-06-16 onward (Expat FIRE, SEO expansion, Rate My Portfolio, Scenarios redesign, Android/PWA, trial pricing, emergency fund change, born-twice redesign) is undocumented there too.
+4. Mobile QA: full no-login homepage → calculator/onboarding → freedom-date result → monthly move flow, now against the born-twice redesign.
+5. Verify the friends/family beta path on a real phone: clear copy, save confirmations, obvious nav, no surprise prompts.
+6. Confirm production Stripe/Plaid/PostHog environment only when needed; never write secret values into this vault.
+7. Keep updating this log after meaningful development so future agents start with current state instead of stale chat history.
