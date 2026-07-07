@@ -28,6 +28,23 @@ After meaningful UntilFire work:
 
 ## Recent development trail
 
+### 2026-07-07 — Production reverted after manual promotion of an unrelated branch; fixed by merging PR #115 to `main`
+
+- Incident: `www.untilfire.com` / `untilfire.com` briefly served the pre-redesign landing page again after John manually promoted `codex/backlinks-2026-07-03` (commit `e9158a4`, an unrelated backlink/badge-logging branch) to production from the Vercel dashboard, overwriting the live "born twice" redesign.
+- Root cause: production was being pointed at whichever branch preview was last manually promoted in Vercel, not tracking `main`. Several branches (`claude/untilfire-next-steps-uabyk5`, `codex/backlinks-2026-07-03`) each had their previews promoted to prod at different points, so prod could flip between them depending on who last clicked "Promote to Production."
+- Fix: merged PR #115 into `main` (merge commit `1eff2d8`). `main`'s auto-deploy then became the new production deployment and picked up the `www.untilfire.com` / `untilfire.com` aliases automatically — no manual promotion needed.
+- Residual risk: `codex/backlinks-2026-07-03` is still an open, unmerged branch. If it (or any other branch preview) gets manually promoted again, the same revert can recur. Should be merged to `main` or closed before it's promoted again.
+- Recommendation going forward: treat `main` as the only source of truth for `www.untilfire.com` — merge to ship, avoid promoting arbitrary preview branches to production from the Vercel dashboard.
+
+### 2026-07-02 — Landing page redesigned around "you are born twice"; reveal-screen conversion leak fixed (PR #115)
+
+- Why: PostHog funnel (trailing 30 days) showed 136 visitors → 25 calculator starts (18%) → 15 freedom-date reveals → **1 signup**. Two leaks targeted: the landing decision moment, and reveal→signup where OAuth login was the only save path.
+- Reveal screen: resurrected the already-built "get it by email" capture (posts to `/api/waitlist`, sends a Resend plan email) that was sitting dead in a `display:none` block, into the visible Save Plan sidebar; added a closing "Don't lose this plan" save block at the end of the reveal scroll so it no longer dead-ends at Share/Adjust.
+- Landing page: full redesign of `app/components/landing/LandingPage.tsx` around a "born twice" narrative — literal birth into the grind, second birth when work becomes optional. Live countdown to the user's own freedom date (falls back to an example date), rotating dotted-globe (via `cobe`), an interactive "try it" slider using the same compounding math as the real calculator, a real per-city FIRE-readiness table, editorial pricing/quote/FAQ sections. Bank-connection trust band (logos) restored below the primary CTA rather than being the first message under it, matching the "no bank prompts before value" rule.
+- Verification: `tsc --noEmit`, `next build`, ESLint clean on changed files, `npm run test:calm-startup`, Playwright browser QA (desktop + mobile) through the full wizard → reveal → email capture flow.
+- Commits: `c747cf0` (redesign), `266401c` (ticker → trust band swap), `ef8da5f` (mask-fade trust strip, drop inaccurate trust cues).
+- Related: acquisition work shifted from Reddit/X/HN launch posts to guest-post outreach for backlinks — see [[UntilFire/Marketing/Guest Post Outreach]].
+
 ### 2026-05-26 — Emergency fund now excludes brokerage DCA cash; Google login uses canonical UntilFire URL
 
 - Repo update: dashboard emergency-fund logic now keeps brokerage cash in total cash/assets but excludes it from the emergency-fund "Current Savings" number when that cash is sitting in a brokerage account for scheduled investing.
@@ -85,7 +102,8 @@ After meaningful UntilFire work:
 
 ## Current useful next actions
 
-1. Mobile QA: full no-login homepage → calculator/onboarding → freedom-date result → monthly move flow.
-2. Verify the friends/family beta path on a real phone: clear copy, save confirmations, obvious nav, no surprise prompts.
-3. Confirm production Stripe/Plaid/PostHog environment only when needed; never write secret values into this vault.
-4. Keep updating this log after meaningful development so future agents start with current state instead of stale chat history.
+1. Merge or close `codex/backlinks-2026-07-03` so it can't be manually re-promoted over the current redesign; going forward, ship to production only via merges to `main`.
+2. Mobile QA: full no-login homepage → calculator/onboarding → freedom-date result → monthly move flow, now against the born-twice redesign.
+3. Verify the friends/family beta path on a real phone: clear copy, save confirmations, obvious nav, no surprise prompts.
+4. Confirm production Stripe/Plaid/PostHog environment only when needed; never write secret values into this vault.
+5. Keep updating this log after meaningful development so future agents start with current state instead of stale chat history.
