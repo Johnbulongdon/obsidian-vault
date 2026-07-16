@@ -2,7 +2,7 @@
 project: UntilFire
 status: draft
 created_at: 2026-05-28
-updated_at: 2026-05-28
+updated_at: 2026-07-16
 source: synthesized from beta survey, market research, personas, and decision log
 ---
 
@@ -59,7 +59,7 @@ Most FIRE tools are built for people who already speak the language, already tru
 UntilFire bridges that gap by combining three things in one experience:
 
 1. **A fast freedom-date answer** — clear value without friction.
-2. **A simple, trustworthy picture of the user’s situation** — grounded in real cities, taxes, and context.
+2. **A simple, trustworthy picture of the user's situation** — grounded in real cities, taxes, and context.
 3. **A practical next-step plan** — guidance that helps the user act, not just observe.
 
 ## Who it is for
@@ -127,7 +127,8 @@ Human advisers are expensive and often inaccessible for younger or earlier-stage
 - Keep the tone calm, practical, and non-judgmental.
 - Use city/tax accuracy and global coverage as trust proof, not the headline.
 - Avoid sounding like a generic tracker, spreadsheet replacement, or finance-content hub.
-- Avoid assuming the user already identifies as “FIRE.” Many users want the outcome before they adopt the label.
+- Avoid assuming the user already identifies as "FIRE." Many users want the outcome before they adopt the label.
+- "Guided path, not just a number" is a design philosophy, not a gamification mechanic — no streaks, no daily-engagement loops, no lesson-plan language. Avoid analogies (e.g. Duolingo) that imply those mechanics; they invite the wrong expectations for a product whose real cadence is monthly, not daily.
 
 ## Roadmap implication
 
@@ -156,3 +157,5 @@ It is the product that gives people their freedom date, then helps them move it 
 1. Use the broader category: **financial freedom app**.
 2. Treat freedom from financial stress and freedom from work as the same core emotional outcome.
 3. Keep global / cross-border strength as supporting trust proof for now, not the lead positioning.
+4. **(2026-07-16)** The "guided path" idea should never be described externally as "Duolingo-style" or similar gamification analogies — it means "don't abandon the user after a number, keep it simple," not streaks or daily-engagement mechanics. Removed from `docs/ROADMAP.md` and `docs/MARKET.md` in the app repo; this note is now the canonical description.
+5. **(2026-07-16)** The adviser/guidance layer should be built infra-first: transparent, deterministic tools (scenario modeling grounded in the user's real data) before an AI-driven recommendation engine. Early AI-generated advice tested too generic to lead with. Phase 5 ("Monthly Moves Adviser") in the roadmap is intentionally paused for this reason, not stalled by accident — revisit once the deterministic guidance surface is solid.
