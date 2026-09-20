@@ -33,20 +33,44 @@ surface area. Features are not the bottleneck — the app already has a
 household mode, a customisable home, bank sync, categories and scenarios,
 serving one active user.
 
-## Block 1 — Stop the leaks (now → 18 Oct, 4 weeks)
+## Block 1 — Fix the two cliffs (now → 18 Oct, 4 weeks)
 
-Things that are already broken or unproven in the funnel people already walk.
+The onboarding gap audit in *Gentle Onboarding Principles* measured the
+funnel: 225 landing views, and two drops that dwarf everything else.
+
+| | People | Drop |
+|---|---|---|
+| Landing viewed | 225 | — |
+| Reaches the calculator | 24 | **89%** |
+| Reveal — freedom date shown | 16 | 33% over four steps |
+| Signup started | 1 | **94%** |
+
+The wizard itself is fine — 24 into it, 16 out the far end, no single step
+bleeding. The problem is on both sides of it.
+
+There is also more traffic than the account count suggests: ~7 visitors a
+day are already arriving. Acquisition is not the bottleneck. Activation is.
+
+- **Instrument the email capture first.** The reveal offers "or get it by
+  email" through `/api/waitlist`, which is not in the funnel contract at
+  all, so some of that 94% may be converting down an untracked path. Do not
+  redesign anything against a number that is measuring the wrong door.
+- **Cliff 1 — nine in ten never start.** They read the hero and leave. This
+  is a landing problem, not a wizard problem.
+- **Cliff 2 — they see their freedom date and stop.** Sixteen people got the
+  answer and one wanted an account. Whatever the reveal is currently
+  offering as a next step is not worth the signup.
+- **The tonal break may be feeding both.** The hero got the v7 dark redesign
+  and the wizard and reveal did not — click the polished dark hero, land on
+  the older light calculator.
+
+Two smaller ones, cheap and already known:
 
 - **The reveal has no spending floor.** Savings equal to income yields
-  "YOU'RE ALREADY FINANCIALLY FREE" on $4,000 of savings. A stranger who
-  hits that on their first try does not come back, and it is on the main
-  no-login path.
-- **Email sequence proven end to end.** Campaign tagging landed 17
-  September, after that day's cron run, and no user has been due since — so
-  every delivery, open and click is still theoretically tracked and
-  practically untested.
-- **Household tested with two real accounts.** Built through P4 and never
-  run by two people. Test it with the real second account.
+  "YOU'RE ALREADY FINANCIALLY FREE" on $4,000. A stranger who hits that on
+  their first try does not come back.
+- **The email sequence has never run end to end.** Campaign tagging landed
+  17 September, after that day's cron, and nobody has been due since.
 
 ## Block 2 — Build the reason to come back (19 Oct → 29 Nov, 6 weeks)
 
@@ -86,7 +110,14 @@ and it costs another six months to retry.
 
 Holidays 21 Dec – 3 Jan are not planned work.
 
-## The one number to watch
+## The two numbers to watch
 
-Weekly active users. It is 1. If it is still in single digits in December,
-nothing in Block 4 will save the launch, and the date should move.
+**Landing → calculator started.** It is 11%. Every visitor Product Hunt
+sends lands on that same page, so this number multiplies the entire launch.
+
+**Reveal → account.** It is 6% at best and possibly lower. This is the one
+that turns a launch-day spike into users.
+
+Weekly active users is the honest backstop: it is 1. If it is still in
+single digits in December, nothing in Block 4 will save the launch, and the
+date should move.
