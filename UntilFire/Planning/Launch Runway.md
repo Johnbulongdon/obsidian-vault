@@ -147,6 +147,49 @@ Google prefers hyphens, but the only pages affected are the city pages we
 just decided not to invest in, and they currently rank 1–7 for their terms.
 Risking that for a marginal signal on pages that earn nothing is a bad trade.
 
+### Shipped — country pages (21 September), and the bar they have to clear
+
+36 country pages at `/fire-number/countries/*`, in the sitemap and linked
+from the hub. Every figure computed from data the product already stands
+behind — cost, effective tax, FIRE target, cost rank among all 36, the spread
+between a country's cheapest and dearest city, what the move does to a US
+FIRE target, how many years a million funds there.
+
+**The test, decided now rather than in two months when it is tempting to move
+the goalposts.** The baseline, measured the day they shipped, over 60 days:
+
+| Pages | Impressions | Clicks | Avg position |
+|---|---|---|---|
+| 7 calculators | 202 | 0 | 35.2 |
+| 229 city + state pages | 115 | 2 | 6.7 |
+| 36 country pages | 0 (new) | — | — |
+
+**By 21 November the 36 country pages must be producing more impressions than
+the 229 city pages.** If 36 pages cannot beat 229, the geo hypothesis is
+wrong and the answer is fewer and deeper pages, not more of them. A secondary
+fail signal: zero clicks after two months of impressions.
+
+That comparison is self-normalising — same site, same window, same crawl
+budget — so it survives the site growing or shrinking around it.
+
+```sql
+select case
+    when dimension_value like '%/fire-number/countries/%' then 'country pages'
+    when dimension_value like '%/calculators/%'           then 'calculators'
+    when dimension_value like '%/fire-number/%'           then 'city + state pages'
+    else 'everything else' end as page_group,
+  sum(impressions) as impressions, sum(clicks) as clicks,
+  round(avg(position)::numeric, 1) as avg_position
+from seo_search_console
+where dimension = 'page' and date > current_date - 60
+group by 1 order by impressions desc;
+```
+
+Known limitation, recorded so it is not a surprise: two country pages read
+67–82% identical to each other. Every figure differs; the sentences around
+them repeat. That is thinner than it should be for a competitive term, and
+it is the first thing to fix if the November check fails.
+
 ### To do — 2. Lean into qualified and geo terms
 
 Where the site is already competitive, it is competitive on qualified
