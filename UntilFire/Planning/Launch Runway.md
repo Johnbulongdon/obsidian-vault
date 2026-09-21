@@ -110,6 +110,74 @@ and it costs another six months to retry.
 
 Holidays 21 Dec – 3 Jan are not planned work.
 
+## SEO — what the Search Console data actually said
+
+Search Console now syncs daily into `seo_search_console`. The first full pull
+(23 June – 18 September, the life of the property) settled the question that
+had been guesswork: **3,261 impressions, 30 clicks.** The site is indexed and
+does rank. It ranks for the wrong things.
+
+Two opposite failures, and they point in opposite directions:
+
+**The 229 city pages rank beautifully for terms nobody searches.**
+`/fire-number/austin-tx` sits at position **1.7** and earned five impressions
+in three months. `nyc` is 2.5, `atlanta` 3.7, the query "singapore fire
+number" is **#1** on three impressions. That retires the programmatic city
+strategy on evidence rather than opinion: it worked technically and the
+demand is not there. Do not build more of them.
+
+**The calculators rank for terms people do search — on page four.**
+"coast fire calculator" 41, "apy to apr calculator" 37, "coast fire" 48,
+compound interest 77. Impressions at position 41 only happen when real volume
+exists, because almost nobody scrolls that far. Zero clicks, for the same
+reason.
+
+Across 79 queries: 5 in the top ten, 2 at 11–20, **51 at 21–50**, 21 below
+50. That distribution is a site Google has understood and does not yet trust.
+
+### Done — on-page pass (21 September)
+
+Deepened `coast-fire` (506 → 892 words) and `apy` (447 → 679) with worked
+examples, reference tables and FAQs written against the queries that actually
+reach them. Fixed three titles rendering as `Calculator -Convert` with no
+space, and a duplicate `<h1>` on the APY page.
+
+Deliberately **not** done: migrating the `city_slug` underscores to hyphens.
+Google prefers hyphens, but the only pages affected are the city pages we
+just decided not to invest in, and they currently rank 1–7 for their terms.
+Risking that for a marginal signal on pages that earn nothing is a bad trade.
+
+### To do — 2. Lean into qualified and geo terms
+
+Where the site is already competitive, it is competitive on qualified
+variants, not generic ones:
+
+| Query | Position |
+|---|---|
+| coast fire calculator | 41 |
+| coast fire calculator singapore | 7.7 |
+| singapore fire number | 1.0 |
+| sg fire calculator | 10.3 |
+
+Generic term, page four; qualified term, page one. Singapore is also the
+single highest-impression page on the site. With 263 cities and an Expat FIRE
+feature already built, there is a position here — *the FIRE calculator that
+handles your country* — that the US personal-finance incumbents are not
+contesting. This is choosing a fight that can be won rather than one that
+cannot.
+
+### To do — 3. Links, which are the actual unlock
+
+On-page work moves a page from 40 to roughly 20–25. Top ten for a commercial
+term needs authority, and the site has close to none. That means being cited
+by FIRE creators, newsletters and communities — founder work, not engineering
+work, and the only item on this list that cannot be delegated to a coding
+session.
+
+Worth being blunt in the plan: none of this pays out before January. Four
+months old, 37 impressions a day. Done well it starts showing around March.
+SEO is a parallel long game, not the answer to the launch-traffic question.
+
 ## The two numbers to watch
 
 **Landing → calculator started.** It is 11%. Every visitor Product Hunt
